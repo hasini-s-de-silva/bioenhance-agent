@@ -20,7 +20,15 @@ import json
 import os
 import re
 
-from .descriptors import compute_descriptors, resolve_input
+from dotenv import load_dotenv
+
+# Load .env here rather than only in app.py, so every entry point — the Streamlit
+# app, the evaluation harness, a bare `python -c` — sees the key. Without this the
+# harness silently falls back to the rule-based backend and reports results that
+# look like LLM results but are not.
+load_dotenv()
+
+from .descriptors import compute_descriptors, resolve_input  # noqa: E402
 from .prompts import SYSTEM_PROMPT, build_user_prompt
 from .retrieval import build_query, retrieve_relevant_evidence
 from .schemas import (
@@ -281,8 +289,28 @@ def _rule_based_assessment(
 class FormulationAgent:
     def __init__(self, backend: str = "auto", model: str = DEFAULT_MODEL):
         self.model = model
+        key = os.environ.get("ANTHROPIC_API_KEY", "").strip()
+
         if backend == "auto":
-            backend = "anthropic" if os.environ.get("ANTHROPIC_API_KEY") else "rulebased"
+            backend = "anthropic" if key else "rulebased"
+        elif backend == "anthropic" and not key:
+            # Explicitly asking for the LLM without a key is a mistake worth shouting
+            # about — falling back silently would produce rule-based numbers labelled
+            # as an LLM run.
+            raise RuntimeError(
+                "backend='anthropic' requires ANTHROPIC_API_KEY, which is not set.\n"
+                "  1. cp .env.example .env\n"
+                "  2. put your key in .env as ANTHROPIC_API_KEY=sk-ant-...\n"
+                "  3. re-run from the repository root\n"
+                "Or use --backend rulebased for the deterministic no-LLM baseline."
+            )
+
+        if backend == "anthropic" and key.startswith("sk-ant-") is False:
+            print(
+                f"[warning] ANTHROPIC_API_KEY does not start with 'sk-ant-' "
+                f"(got {key[:7]!r}...). If auth fails, check the key was copied in full."
+            )
+
         self.backend = backend
         self._client = None
 
