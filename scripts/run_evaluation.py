@@ -19,6 +19,7 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--backend", default="auto", choices=["auto", "anthropic", "ollama", "rulebased"])
     parser.add_argument("--repeats", type=int, default=3)
+    parser.add_argument("--workers", type=int, default=6, help="concurrent requests")
     parser.add_argument(
         "--configs", nargs="*", default=None, help="subset of: llm_only llm_rag full"
     )
@@ -26,7 +27,10 @@ def main() -> None:
 
     try:
         report = run_evaluation(
-            backend=args.backend, configs=args.configs, stability_repeats=args.repeats
+            backend=args.backend,
+            configs=args.configs,
+            stability_repeats=args.repeats,
+            workers=args.workers,
         )
         save(report)
     except ConfigurationError as exc:

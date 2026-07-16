@@ -23,6 +23,7 @@ from __future__ import annotations
 
 import csv
 import json
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from collections import Counter
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -194,6 +195,7 @@ def run_evaluation(
     backend: str = "auto",
     configs: list[str] | None = None,
     stability_repeats: int = 3,
+    workers: int = 6,
 ) -> dict:
     configs = configs or CONFIGS
     agent = FormulationAgent(backend=backend)
@@ -202,24 +204,32 @@ def run_evaluation(
     outcomes: list[CaseOutcome] = []
     for config in configs:
         print(f"\n[{config}]", flush=True)
-        for case in cases:
-            outcome = evaluate_case(agent, case, config)
-            outcomes.append(outcome)
-            flag = "ok " if outcome.schema_ok else "ERR"
-            cite = (
-                "n/a " if outcome.citation_accuracy is None else f"{outcome.citation_accuracy:.2f}"
-            )
-            print(
-                f"  {flag} {case['name']:15s} cite={cite} "
-                f"halluc={outcome.n_hallucinated} risk={outcome.predicted_risk}"
-                f"{'' if outcome.risk_agreement else ' (exp ' + outcome.expected_risk + ')'}",
-                flush=True,
-            )
+        # Cases are independent, so run them concurrently. A local model is the
+        # bottleneck and serialising 72 calls turns a 15-minute job into 90 minutes.
+        with ThreadPoolExecutor(max_workers=workers) as pool:
+            futures = {pool.submit(evaluate_case, agent, c, config): c for c in cases}
+            for future in as_completed(futures):
+                case = futures[future]
+                outcome = future.result()  # ConfigurationError propagates and aborts
+                outcomes.append(outcome)
+                flag = "ok " if outcome.schema_ok else "ERR"
+                cite = (
+                    "n/a "
+                    if outcome.citation_accuracy is None
+                    else f"{outcome.citation_accuracy:.2f}"
+                )
+                print(
+                    f"  {flag} {case['name']:15s} cite={cite} "
+                    f"halluc={outcome.n_hallucinated} risk={outcome.predicted_risk}"
+                    f"{'' if outcome.risk_agreement else ' (exp ' + outcome.expected_risk + ')'}",
+                    flush=True,
+                )
 
     summaries = [summarise(outcomes, c) for c in configs]
 
     print("\n[stability]", flush=True)
-    stability = [stability_check(agent, c, stability_repeats) for c in cases]
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        stability = list(pool.map(lambda c: stability_check(agent, c, stability_repeats), cases))
     for s in stability:
         print(f"  {s['name']:15s} agreement={s['agreement']:.2f}  top={s['modal']}", flush=True)
 

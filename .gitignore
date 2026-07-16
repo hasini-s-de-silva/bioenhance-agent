@@ -12,3 +12,6 @@ data/solubility_model.joblib
 
 # Embedding cache, rebuilt on first run.
 data/evidence_embeddings.npy
+
+# Editor/agent scratch — not part of the project.
+.claude/
