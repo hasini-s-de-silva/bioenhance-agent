@@ -13,6 +13,7 @@ from pydantic import ValidationError
 from src.llm_agent import (
     ConfigurationError,
     FormulationAgent,
+    _explain_api_error,
     _extract_json,
     check_grounding,
 )
@@ -165,6 +166,58 @@ class TestKeyValidation:
     def test_plausible_key_is_accepted(self, monkeypatch):
         monkeypatch.setenv("ANTHROPIC_API_KEY", "sk-ant-api03-" + "x" * 95)
         assert FormulationAgent(backend="anthropic").backend == "anthropic"
+
+
+class TestApiErrorExplanations:
+    """An API error must name the actual next action, not dump a raw dict."""
+
+    @staticmethod
+    def _error(status: int, message: str):
+        import anthropic
+        import httpx
+
+        body = {"type": "error", "error": {"message": message}}
+        response = httpx.Response(
+            status,
+            request=httpx.Request("POST", "https://api.anthropic.com/v1/messages"),
+            json=body,
+        )
+        cls = {
+            400: anthropic.BadRequestError,
+            401: anthropic.AuthenticationError,
+            404: anthropic.NotFoundError,
+            429: anthropic.RateLimitError,
+        }[status]
+        return cls(message=message, response=response, body=body)
+
+    def test_no_credit_is_explained_as_billing(self):
+        exc = self._error(400, "Your credit balance is too low to access the Anthropic API.")
+        assert "no credit" in _explain_api_error(exc)
+        assert "Plans & Billing" in _explain_api_error(exc)
+
+    def test_bad_key_is_explained_as_auth(self):
+        exc = self._error(401, "invalid x-api-key")
+        assert "key was rejected" in _explain_api_error(exc)
+
+    def test_unknown_model_names_the_model_setting(self):
+        exc = self._error(404, "model not found")
+        assert "BIOENHANCE_MODEL" in _explain_api_error(exc)
+
+    def test_billing_error_is_terminal_not_retried(self, monkeypatch):
+        """A 400 must abort immediately — retrying it 3x buries the cause."""
+        monkeypatch.setenv("ANTHROPIC_API_KEY", "sk-ant-api03-" + "x" * 95)
+        agent = FormulationAgent(backend="anthropic")
+
+        calls = {"n": 0}
+
+        def _boom(*a, **k):
+            calls["n"] += 1
+            raise self._error(400, "Your credit balance is too low.")
+
+        monkeypatch.setattr(agent, "_call_llm", _boom)
+        with pytest.raises(ConfigurationError, match="no credit"):
+            agent.run(smiles=PARACETAMOL, prompt_mode="full")
+        assert calls["n"] == 1, f"terminal error retried {calls['n']}x — must be 1"
 
 
 class TestSaveRefusesBrokenRuns:

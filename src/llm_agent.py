@@ -82,6 +82,57 @@ def check_grounding(
     )
 
 
+def _explain_api_error(exc: Exception) -> str:
+    """Turn an SDK error into something that names the actual next action.
+
+    The raw SDK message is accurate but buried in a dict; a reader mid-run needs to
+    know which of 'wrong key' / 'no credit' / 'wrong model' they are looking at.
+    """
+    text = str(exc)
+    status = getattr(exc, "status_code", None)
+
+    # Match on the structured body as well as the rendered string — the SDK's __str__
+    # format is not a contract, and the body is where the real message lives.
+    body = getattr(exc, "body", None)
+    if isinstance(body, dict):
+        detail = body.get("error", {})
+        if isinstance(detail, dict):
+            text = f"{text} {detail.get('message', '')} {detail.get('type', '')}"
+    low = text.lower()
+
+    if "credit balance is too low" in low or "purchase credits" in low:
+        hint = (
+            "Your Anthropic account has no credit. A key on its own is not enough — "
+            "credit is a separate purchase.\n"
+            "  Fix: console.anthropic.com -> Plans & Billing -> buy credit ($5 minimum).\n"
+            "  A full evaluation run costs roughly $1-2."
+        )
+    elif status == 401 or "invalid x-api-key" in low or "authentication" in low:
+        hint = (
+            "The API key was rejected.\n"
+            "  Check ANTHROPIC_API_KEY in .env is your real key, complete and unquoted,\n"
+            "  and that it has not been revoked at console.anthropic.com."
+        )
+    elif status == 403 or "permission" in low:
+        hint = "The key is valid but lacks permission for this model or endpoint."
+    elif status == 404 or "not_found" in low:
+        hint = (
+            f"The model was not found. BIOENHANCE_MODEL={DEFAULT_MODEL!r}.\n"
+            "  Check that name is correct and available to your account."
+        )
+    elif status == 429 or "rate_limit" in low:
+        hint = (
+            "Rate limited, and the SDK's own retries were already exhausted.\n"
+            "  Wait a minute and re-run, or lower --repeats."
+        )
+    elif status is not None and status >= 500:
+        hint = "The API had a server-side error. Wait and re-run; nothing to fix locally."
+    else:
+        hint = "Check your key, credit balance, and model name at console.anthropic.com."
+
+    return f"{hint}\n\nOriginal error: {text[:300]}"
+
+
 def _extract_json(text: str) -> dict:
     """Pull a JSON object out of a model response, tolerating fences and stray prose."""
     text = text.strip()
@@ -392,21 +443,13 @@ class FormulationAgent:
             try:
                 raw = self._call_llm(SYSTEM_PROMPT, user, temperature)
                 return FormulationAssessment.model_validate(_extract_json(raw))
-            except (
-                anthropic.AuthenticationError,
-                anthropic.PermissionDeniedError,
-                anthropic.NotFoundError,
-            ) as exc:
-                # Bad key, no access, or a model that doesn't exist. Retrying cannot
-                # help — it just turns one clear failure into three noisy ones and
-                # buries the cause under a misleading "failed validation" message.
-                raise ConfigurationError(
-                    f"{type(exc).__name__}: {exc}\n"
-                    "This is a configuration problem, not a model problem. Check "
-                    "ANTHROPIC_API_KEY in .env, that the key is active with credit at "
-                    "console.anthropic.com, and that BIOENHANCE_MODEL names a model "
-                    "your account can reach."
-                ) from exc
+            except anthropic.APIStatusError as exc:
+                # ANY non-2xx from the API ends this call. Retrying here is always
+                # wrong: the SDK already retries the transient cases (429, 5xx)
+                # internally, so anything reaching us is terminal — and re-sending it
+                # with "your previous response failed validation" appended buries the
+                # real cause (bad key, no credit, unknown model) under a lie about JSON.
+                raise ConfigurationError(_explain_api_error(exc)) from exc
             except (ValueError, ValidationError) as exc:
                 # Malformed or schema-invalid JSON — the one failure worth retrying,
                 # since the feedback often fixes it.
