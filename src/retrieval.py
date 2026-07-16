@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import json
 import os
+import threading
 from pathlib import Path
 
 import numpy as np
@@ -41,6 +42,11 @@ class EvidenceIndex:
         self._model = None
         self._vectorizer = None
         self._matrix: np.ndarray | None = None
+        # The evaluation harness calls search() from a thread pool. sentence-transformers'
+        # encode() is not safe to call concurrently on one model instance from multiple
+        # threads on this platform — it segfaulted under exactly that load. Queries are
+        # cheap (tens of ms), so serialising them costs nothing next to the LLM call.
+        self._query_lock = threading.Lock()
 
         # BIOENHANCE_RETRIEVER=dense|tfidf|auto. Explicit beats guessing: CI and
         # offline demos pin tfidf so a Hugging Face outage cannot fail the run.
@@ -116,9 +122,10 @@ class EvidenceIndex:
 
     def _embed_query(self, query: str) -> np.ndarray:
         if self._model is not None:
-            return self._model.encode(
-                [query], normalize_embeddings=True, show_progress_bar=False
-            ).astype("float32")
+            with self._query_lock:
+                return self._model.encode(
+                    [query], normalize_embeddings=True, show_progress_bar=False
+                ).astype("float32")
         vec = self._vectorizer.transform([query]).toarray().astype("float32")
         return vec / np.clip(np.linalg.norm(vec, axis=1, keepdims=True), 1e-9, None)
 
@@ -141,12 +148,18 @@ class EvidenceIndex:
 
 
 _INDEX: EvidenceIndex | None = None
+_INDEX_LOCK = threading.Lock()
 
 
 def get_index() -> EvidenceIndex:
+    # The evaluation harness calls this from a thread pool. Without the lock, concurrent
+    # callers each construct their own EvidenceIndex and race to write the same embedding
+    # cache file, which can corrupt it mid-write for a reader on another thread.
     global _INDEX
     if _INDEX is None:
-        _INDEX = EvidenceIndex()
+        with _INDEX_LOCK:
+            if _INDEX is None:
+                _INDEX = EvidenceIndex()
     return _INDEX
 
 

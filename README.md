@@ -232,35 +232,39 @@ Metrics: citation accuracy, unsupported-claim rate, structured-output success, u
 reporting, retrieval relevance, solubility-risk agreement, and top-strategy stability across
 repeated runs.
 
-### Results (deterministic rule-based backend)
+### Results (local LLM: qwen2.5:7b via Ollama)
 
-> **These numbers are from the rule-based backend, not an LLM**, because no API key was
-> available when they were generated. Read them as a floor and a harness self-test.
-> Regenerate the LLM rows with `python -m scripts.run_evaluation --backend anthropic`.
+> Real LLM results, reproducible for free — no API key, no account, no billing:
+> `python -m scripts.run_evaluation --backend ollama --repeats 2`.
 
 | System | Citation accuracy | Unsupported claims | Structured-output success | Uncertainty reported | Retrieval hit | Risk agreement | Fabricated citations |
 |---|---|---|---|---|---|---|---|
-| LLM alone | n/a | 92% | 100% | 100% | 17% | 75% | 0 |
-| LLM + retrieval | 100% | 42% | 100% | 100% | 83% | 75% | 0 |
-| Retrieval + descriptors + LLM | 100% | 42% | 100% | 100% | 83% | 75% | 0 |
+| LLM alone | n/a | 100% | 100% | 100% | 17% | 67% | 0 |
+| LLM + retrieval | 96% | 50% | 100% | 100% | 58% | 33% | 1 |
+| Retrieval + descriptors + LLM | 100% | 25% | 100% | 92% | 58% | 75% | 0 |
 
 The honest reading of this table:
 
-- **Retrieval is doing real work.** Unsupported claims fall from 92% to 42%, and retrieval
-  relevance rises from 17% to 83%.
+- **LLM alone calls every compound "high risk,"** including both negative controls —
+  paracetamol and metformin, which are freely soluble. It scores 67% risk agreement only
+  because 8 of the 12 test compounds genuinely are high-risk. That is accuracy with no
+  calibration, and it is the measured version of this README's opening argument.
+- **Retrieval alone made risk calls *worse*, not better** — 33%, down from 67% — and
+  produced the run's only fabricated citation, on metformin. Evidence with no grounding
+  descriptors gave the model material to talk around rather than reason from.
+- **`Retrieval + descriptors + LLM` is the only configuration that correctly calls
+  paracetamol "low."** That is the clean, quantified demonstration that the scientific
+  tooling, not the LLM, is what makes this system trustworthy. Zero fabricated citations in
+  this row.
 - **`n/a` is not 100%.** A system that cites nothing has *undefined* citation accuracy, not
   perfect accuracy. Scoring it 1.0 would have made the ungrounded baseline look flawless —
-  the metric was fixed after it produced exactly that misleading result.
-- **The bottom two rows are identical by construction**, because the rule-based backend
-  always uses descriptors and cannot be ablated. Only an LLM run separates them.
-- **100% citation accuracy here is trivial**, since this backend cites by construction. It
-  says nothing about whether an LLM would fabricate sources. That is precisely what the
-  `anthropic` backend measures, and what the grounding tests in `tests/test_outputs.py`
-  check against a deliberately fabricating model.
-- **Stability is trivially 100%** for a deterministic backend.
+  the metric was fixed after an earlier version produced exactly that misleading result.
+- **Stability: 100%** mean agreement on the top-ranked strategy across 2 repeated runs per
+  case.
 
-**Risk agreement is 75%, not higher, and the misses are informative.** Metformin is
-predicted log S −2.02 ("moderate") when it is in fact freely soluble (~300 mg/mL). The
+**Risk agreement in the full system is 75%, not higher, and the misses are informative.**
+Metformin is predicted log S −2.02 ("moderate") when it is in fact freely soluble
+(~300 mg/mL). The
 baseline model predicts *intrinsic, neutral-species* solubility and has no concept of
 ionisation; metformin is a strong base (pKa ≈ 12.4) that exists as a highly soluble cation
 at physiological pH. Griseofulvin and carbamazepine miss for related reasons — solid-state

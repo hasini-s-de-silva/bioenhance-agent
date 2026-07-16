@@ -201,6 +201,13 @@ def run_evaluation(
     agent = FormulationAgent(backend=backend)
     cases = load_cases()
 
+    # Build the retrieval index (first-time sentence-transformers model load) on the
+    # main thread before any worker touches it. Constructing it lazily inside a
+    # ThreadPoolExecutor worker segfaulted under memory pressure; the lock in
+    # get_index() prevents duplicate builds but not which thread does the first one.
+    print("Loading retrieval index...", flush=True)
+    get_index()
+
     outcomes: list[CaseOutcome] = []
     for config in configs:
         print(f"\n[{config}]", flush=True)
