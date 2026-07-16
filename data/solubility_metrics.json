@@ -1,0 +1,69 @@
+{
+  "n_compounds": 1128,
+  "n_train": 902,
+  "n_test": 226,
+  "test_rmse": 0.7580334837294205,
+  "test_mae": 0.5155399419851775,
+  "test_r2": 0.8784348103886555,
+  "cv_rmse_mean": 0.6676393780160101,
+  "cv_rmse_std": 0.051917944714320347,
+  "feature_importance": {
+    "molecular_weight": 0.09868303351598431,
+    "clogp": 0.4741940869643773,
+    "tpsa": 0.061602864930018625,
+    "h_bond_donors": 0.010986539050651011,
+    "h_bond_acceptors": 0.04434589016402365,
+    "rotatable_bonds": 0.01192065528610805,
+    "aromatic_rings": 0.012928261475336628,
+    "fraction_csp3": 0.014682987400107431,
+    "molar_refractivity": 0.20241546916084374,
+    "heavy_atoms": 0.05784007293264187,
+    "aromatic_proportion": 0.010400139119907503
+  },
+  "train_ranges": {
+    "molecular_weight": [
+      53.338100000000004,
+      477.9916
+    ],
+    "clogp": [
+      -2.5071000000000003,
+      7.27
+    ],
+    "tpsa": [
+      0.0,
+      145.3789000000003
+    ],
+    "h_bond_donors": [
+      0.0,
+      5.0
+    ],
+    "h_bond_acceptors": [
+      0.0,
+      8.0
+    ],
+    "rotatable_bonds": [
+      0.0,
+      12.0
+    ],
+    "aromatic_rings": [
+      0.0,
+      4.0
+    ],
+    "fraction_csp3": [
+      0.0,
+      1.0
+    ],
+    "molar_refractivity": [
+      14.601799999999999,
+      114.9941
+    ],
+    "heavy_atoms": [
+      3.0,
+      31.0
+    ],
+    "aromatic_proportion": [
+      0.0,
+      1.0
+    ]
+  }
+}

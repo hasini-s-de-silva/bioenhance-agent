@@ -1,0 +1,661 @@
+[
+  {
+    "id": "S01",
+    "title": "Amorphous Solid Dispersion as Drug Delivery Vehicles in Cancer",
+    "source": "Polymers",
+    "year": 2023,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/37631436/",
+    "doi": "10.3390/polym15163380",
+    "pmid": "37631436",
+    "text": "Cancer treatment has improved over the past decades, but a major challenge lies in drug formulation, specifically for oral administration. Most anticancer drugs have poor water solubility which can affect their bioavailability. This causes suboptimal pharmacokinetic performance, resulting in limited efficacy and safety when administered orally. As a result, it is essential to develop a strategy to modify the solubility of anticancer drugs in oral formulations to improve their efficacy and safety. A promising approach that can be implemented is amorphous solid dispersion (ASD) which can enhance the aqueous solubility and bioavailability of poorly water-soluble drugs. The addition of a polymer can cause stability in the formulations and maintain a high supersaturation in bulk medium. Therefore, this study aimed to summarize and elucidate the mechanisms and impact of an amorphous solid dispersion system on cancer therapy. To gather relevant information, a comprehensive search was conducted using keywords such as \"anticancer drug\" and \"amorphous solid dispersion\" in the PubMed, Scopus, and Google Scholar databases. The review provides an overview and discussion of the issues related to the ASD system used to improve the bioavailability of anticancer drugs based on molecular pharmaceutics. A thorough understanding of anticancer drugs in this system at a molecular level is imperative for the rational design of the products.",
+    "tags": [
+      "amorphous solid dispersion",
+      "supersaturating formulation"
+    ]
+  },
+  {
+    "id": "S02",
+    "title": "Pharmaceutical amorphous solid dispersion: A review of manufacturing strategies",
+    "source": "Acta pharmaceutica Sinica. B",
+    "year": 2021,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/34522596/",
+    "doi": "10.1016/j.apsb.2021.05.014",
+    "pmid": "34522596",
+    "text": "Amorphous solid dispersions (ASDs) are popular for enhancing the solubility and bioavailability of poorly water-soluble drugs. Various approaches have been employed to produce ASDs and novel techniques are emerging. This review provides an updated overview of manufacturing techniques for preparing ASDs. As physical stability is a critical quality attribute for ASD, the impact of formulation, equipment, and process variables, together with the downstream processing on physical stability of ASDs have been discussed. Selection strategies are proposed to identify suitable manufacturing methods, which may aid in the development of ASDs with satisfactory physical stability.",
+    "tags": [
+      "amorphous solid dispersion"
+    ]
+  },
+  {
+    "id": "S03",
+    "title": "Thermal Stability of Amorphous Solid Dispersions",
+    "source": "Molecules (Basel, Switzerland)",
+    "year": 2021,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/33466393/",
+    "doi": "10.3390/molecules26010238",
+    "pmid": "33466393",
+    "text": "Amorphous solid dispersion drug delivery systems (ASD DDS) were proved to be efficient for the enhancement of solubility and bioavailability of poorly water-soluble drugs. One of the major keys for successful preparation of ASD is the selection of appropriate excipients, mostly polymers, which have a crucial role in improving drug solubility and its physical stability. Even though, excipients should be chemically inert, there is some evidence that polymers can affect the thermal stability of active pharmaceutical ingredients (API). The thermal stability of a drug is closely related to the shelf-life of pharmaceutical products and therefore it is a matter of high pharmaceutical relevance. An overview of thermal stability of amorphous solids is provided in this paper. Evaluation of thermal stability of amorphous solid dispersion is perceived from the physicochemical perspective, from a kinetic (motions) and thermodynamic (energy) point of view, focusing on activation energy and fragility, as well all other relevant parameters for ASD design, with a glance on computational kinetic analysis of solid-state decomposition.",
+    "tags": [
+      "amorphous solid dispersion"
+    ]
+  },
+  {
+    "id": "S04",
+    "title": "Mechanisms of increased bioavailability through amorphous solid dispersions: a review",
+    "source": "Drug delivery",
+    "year": 2020,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/31885288/",
+    "doi": "10.1080/10717544.2019.1704940",
+    "pmid": "31885288",
+    "text": "Amorphous solid dispersions (ASDs) can increase the oral bioavailability of poorly soluble drugs. However, their use in drug development is comparably rare due to a lack of basic understanding of mechanisms governing drug liberation and absorption in vivo. Furthermore, the lack of a unified nomenclature hampers the interpretation and classification of research data. In this review, we therefore summarize and conceptualize mechanisms covering the dissolution of ASDs, formation of supersaturated ASD solutions, factors responsible for solution stabilization, drug uptake from ASD solutions, and drug distribution within these complex systems as well as effects of excipients. Furthermore, we discuss the importance of these findings on the development of ASDs. This improved overall understanding of these mechanisms will facilitate a rational ASD formulation development and will serve as a basis for further mechanistic research on drug delivery by ASDs.",
+    "tags": [
+      "amorphous solid dispersion",
+      "supersaturating formulation"
+    ]
+  },
+  {
+    "id": "S05",
+    "title": "Engineering of Nanofibrous Amorphous and Crystalline Solid Dispersions for Oral Drug Delivery",
+    "source": "Pharmaceutics",
+    "year": 2018,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/30586871/",
+    "doi": "10.3390/pharmaceutics11010007",
+    "pmid": "30586871",
+    "text": "Poor aqueous solubility (<0.1 mg/mL) affects a significant number of drugs currently on the market or under development. Several formulation strategies including salt formation, particle size reduction, and solid dispersion approaches have been employed with varied success. In this review, we focus primarily on the emerging trends in the generation of amorphous and micro/nano-crystalline solid dispersions using electrospinning to improve the dissolution rate and in turn the bioavailability of poorly water-soluble drugs. Electrospinning is a simple but versatile process that utilizes electrostatic forces to generate polymeric fibers and has been used for over 100 years to generate synthetic fibers. We discuss the various electrospinning studies and spinneret types that have been used to generate amorphous and crystalline solid dispersions.",
+    "tags": [
+      "amorphous solid dispersion"
+    ]
+  },
+  {
+    "id": "S06",
+    "title": "Design of a Cereblon construct for crystallographic and biophysical studies of protein degraders",
+    "source": "Nature communications",
+    "year": 2024,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/39406745/",
+    "doi": "10.1038/s41467-024-52871-9",
+    "pmid": "39406745",
+    "text": "The ubiquitin E3 ligase cereblon (CRBN) is the target of therapeutic drugs thalidomide and lenalidomide and is recruited by most targeted protein degraders (PROTACs and molecular glues) in clinical development. Biophysical and structural investigation of CRBN has been limited by current constructs that either require co-expression with the adaptor DDB1 or inadequately represent full-length protein, with high-resolution structures of degrader ternary complexes remaining rare. We present the design of CRBNmidi, a construct that readily expresses from E. coli with high yields as soluble, stable protein without DDB1. We benchmark CRBNmidi for wild-type functionality through a suite of biophysical techniques and solve high-resolution co-crystal structures of its binary and ternary complexes with degraders. We qualify CRBNmidi as an enabling tool to accelerate structure-based discovery of the next generation of CRBN based therapeutics.",
+    "tags": [
+      "cocrystal"
+    ]
+  },
+  {
+    "id": "S07",
+    "title": "Current Perspectives on Development and Applications of Cocrystals in the Pharmaceutical and Medical Domain",
+    "source": "Cureus",
+    "year": 2024,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/39463569/",
+    "doi": "10.7759/cureus.70328",
+    "pmid": "39463569",
+    "text": "In recent years, the design of pharmaceutical cocrystals has garnered significant attention. The process of cocrystallization offers a remarkable opportunity to develop drug products with enhanced properties such as improved stability, solubility, hygroscopicity, dissolution rate, and bioavailability. This detailed review delves into this evolving area, thereby exploring its relevance in pharmaceutical formulation by defining cocrystals and their practical applications and also by discussing methods for their preparation as well as characterization. It also contrasts traditional and innovative techniques for cocrystal formation. Historically, cocrystals have been synthesized using methods like solvent evaporation, grinding, and slurry techniques; however, each has its own set of limitations under specific conditions. The latest trends in cocrystal formation lean toward more advanced approaches such as spray-drying, hot melt extrusion, and supercritical fluid technology, as well as the cutting-edge technique of laser irradiation. The aim behind developing new methods is not just to address the limitations of traditional cocrystallization techniques but also to streamline the process by introducing simpler steps and enabling a continuous production workflow for cocrystal products. In general, this full-length review article offers a report on various techniques available for the creation of pharmaceutical cocrystals, along with the methods for their evaluation. Moreover, it includes reporting developments and diverse applications of cocrystals along with the commercially available cocrystals in the pharmaceutical as well as medical domains.",
+    "tags": [
+      "cocrystal"
+    ]
+  },
+  {
+    "id": "S08",
+    "title": "Pharmaceutical cocrystal of antibiotic drugs: A comprehensive review",
+    "source": "Heliyon",
+    "year": 2022,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/36478792/",
+    "doi": "10.1016/j.heliyon.2022.e11872",
+    "pmid": "36478792",
+    "text": "Pharmaceutical cocrystals, which contain at least one active pharmaceutical ingredient (API), are still an attention-grabbing field for researchers. Two or more discrete molecules unite together by non-covalent bonds, e.g., hydrogen, Van der Waals, and π⋯π bonds. Those bonds are strong enough to stack molecules in solid form lattice, and thus possessing the stability of crystal material, concurrently, non-covalent bonds are weak enough to dissociate when dissolving in water. Therefore, cocrystal delivers drug as a 'ready-to-be absorbed' neutral molecule. Besides, it affects many physicochemical properties, e.g., stability, compressibility, etc. The literature is full of publications that discuss pharmaceutical cocrystals screening and evaluation. This review spots the light on all cocrystals that contain antibiotic (AB) drugs which mentioned in the literature to our knowledge. Focusing on their reported properties like solubility, intrinsic dissolution rate (IDR), stability against humidity/light, powder flowability, compressibility and bioactivity and how they get improved compared to parent AB. Although not many publications imply antimicrobial activity studies in their work, a thorough investigation of how AB cocrystal is affecting bacteria is a persisted necessity. Bacterial ability to develop resistance to known ABs is increasing, making them no longer-efficient. Antibacterial resistance should provoke scientists to use cocrystal modification features to overcome it. This review highlights, classifies and compares all studied AB cocrystals. In addition, it urges research labs, which are interested in cocrystallization, to fill the gap of confronting antimicrobial resistance in their future work.",
+    "tags": [
+      "cocrystal"
+    ]
+  },
+  {
+    "id": "S09",
+    "title": "Perspectives in solubility measurement and interpretation",
+    "source": "ADMET & DMPK",
+    "year": 2019,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/35350542/",
+    "doi": "10.5599/admet.686",
+    "pmid": "35350542",
+    "text": "Several key topics in solubility measurement and interpretation are briefly summarized and illustrated with case studies drawing on published solubility determinations as a function of pH. Featured are examples of ionizable molecules that exhibit solubility-pH curve distortion from that predicted by the traditionally used Henderson-Hasselbalch equation and possible interpretations for these distortions are provided. The scope is not exhaustive; rather it is focused on detailed descriptions of a few cases. Topics discussed are limitations of kinetic solubility, 'brick-dust and grease-balls,' applications of simulated and human intestinal fluids, supersaturation and the relevance of pre-nucleation clusters and sub-micellar aggregates in the formation of solids, drug-buffer/excipient complexation, hydrotropic solubilization, acid-base 'supersolubilization,' cocrystal route to supersaturation, as well as data quality assessment and solubility prediction. The goal is to highlight principles of solution equilibria - graphically more than mathematically - that could invite better assay design, to result in improved quality of measurements, and to impart a deeper understanding of the underlying solution chemistry in suspensions of drug solids. The value of solid state characterizations is stressed but not covered explicitly in this mini-review.",
+    "tags": [
+      "cocrystal"
+    ]
+  },
+  {
+    "id": "S10",
+    "title": "Pharmaceutical Cocrystals: Regulatory and Strategic Aspects, Design and Development",
+    "source": "Advanced pharmaceutical bulletin",
+    "year": 2016,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/28101455/",
+    "doi": "10.15171/apb.2016.062",
+    "pmid": "28101455",
+    "text": "Cocrystal is a concept of the supramolecular chemistry which is gaining the extensive interest of researchers from pharmaceutical and chemical sciences and of drug regulatory agencies. The prominent reason of which is its ability to modify physicochemical properties of active pharmaceutical ingredients. During the development of the pharmaceutical product, formulators have to optimize the physicochemical properties of active pharmaceutical ingredients. Pharmaceutical cocrystals can be employed to improve vital physicochemical characteristics of a drug, including solubility, dissolution, bioavailability and stability of pharmaceutical compounds while maintaining its therapeutic activity. It is advantageous being a green synthesis approach for production of pharmaceutical compounds. The formation polymorphic forms, solvates, hydrates and salts of cocrystals during the synthesis reported in the literature which can be a potential issue in the development of pharmaceutical cocrystals. The approaches like hydrogen bonding rules, solubility parameters, screening through the CSD database or thermodynamic characteristics can be utilized for the rational design of cocrystals and selection of coformers for synthesis multi-component cocrystals. Considering the significance of pharmaceutical cocrystals pharmaceutical regulatory authorities in the United States and Europe issued guidance documents which may be helpful for pharmaceutical product registration in these regions. In this article, we deal with the design, synthesis, strategic aspects and characteristics of cocrystals along perspectives on its regulatory and intellectual property considerations.",
+    "tags": [
+      "cocrystal"
+    ]
+  },
+  {
+    "id": "S11",
+    "title": "Melatonin/Cyclodextrin Inclusion Complexes: A Review",
+    "source": "Molecules (Basel, Switzerland)",
+    "year": 2022,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/35056757/",
+    "doi": "10.3390/molecules27020445",
+    "pmid": "35056757",
+    "text": "Melatonin (MLT) is involved in many functions of the human body, mainly in sleeping-related disorders. It also has anti-oxidant potential and has been proven very effective in the treatment of seasonal affective disorders (SAD), which afflict some people during short winter days. Melatonin has been implicated in a range of other conditions, including Parkinson's disease, Alzheimer's and other neurological conditions, and in certain cancers. Its poor solubility in water leads to an insufficient absorption that led scientists to investigate MLT inclusion in cyclodextrins (CDs), as inclusion of drugs in CDs is a way of increasing the solubility of many lipophilic moieties with poor water solubility. The aim of this review is to gather all the key findings on MLT/CD complexes. The literature appraisal concluded that MLT inclusion leads to a 1:1 complex with the majority of CDs and increases the solubility of the hormone. The interactions of MLT with CDs can be studied by a variety of techniques, such as NMR, FT-IR, XRD and DCS. More importantly, the in vivo experiments showed an increase in the uptake of MLT when included in a CD.",
+    "tags": [
+      "cyclodextrin"
+    ]
+  },
+  {
+    "id": "S12",
+    "title": "Nutraceutical Concepts and Dextrin-Based Delivery Systems",
+    "source": "International journal of molecular sciences",
+    "year": 2022,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/35456919/",
+    "doi": "10.3390/ijms23084102",
+    "pmid": "35456919",
+    "text": "Nutraceuticals are bioactive or chemical compounds acclaimed for their valuable biological activities and health-promoting effects. The global community is faced with many health concerns such as cancers, cardiovascular and neurodegenerative diseases, diabetes, arthritis, osteoporosis, etc. The effect of nutraceuticals is similar to pharmaceuticals, even though the term nutraceutical has no regulatory definition. The usage of nutraceuticals, to prevent and treat the aforementioned diseases, is limited by several features such as poor water solubility, low bioavailability, low stability, low permeability, low efficacy, etc. These downsides can be overcome by the application of the field of nanotechnology manipulating the properties and structures of materials at the nanometer scale. In this review, the linear and cyclic dextrin, formed during the enzymatic degradation of starch, are highlighted as highly promising nanomaterials- based drug delivery systems. The modified cyclic dextrin, cyclodextrin (CD)-based nanosponges (NSs), are well-known delivery systems of several nutraceuticals such as quercetin, curcumin, resveratrol, thyme essential oil, melatonin, and appear as a more advanced drug delivery system than modified linear dextrin. CD-based NSs prolong and control the nutraceuticals release, and display higher biocompatibility, stability, and solubility of poorly water-soluble nutraceuticals than the CD-inclusion complexes, or uncomplexed nutraceuticals. In addition, the well-explored CD-based NSs pathways, as drug delivery systems, are described. Although important progress is made in drug delivery, all the findings will serve as a source for the use of CD-based nanosystems for nutraceutical delivery. To sum up, our review introduces the extensive literature about the nutraceutical concepts, synthesis, characterization, and applications of the CD-based nano delivery systems that will further contribute to the nutraceutical delivery with more potent nanosystems based on linear dextrins.",
+    "tags": [
+      "cyclodextrin"
+    ]
+  },
+  {
+    "id": "S13",
+    "title": "Cyclodextrins in the antiviral therapy",
+    "source": "Journal of drug delivery science and technology",
+    "year": 2021,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/34035845/",
+    "doi": "10.1016/j.jddst.2021.102589",
+    "pmid": "34035845",
+    "text": "The main antiviral drug-cyclodextrin interactions, changes in physicochemical and physiological properties of the most commonly used virucides are summarized. The potential complexation of antiviral molecules against the SARS-Cov2 also pointed out the lack of detailed information in designing effective and general medicines against viral infections. The principal problem of the current molecules is the 3D structures of the currently active compounds. Improving the solubility or bioavailability of antiviral molecules is possible, however, there is no universal solution, and the complexation experiments dominantly use the already approved cyclodextrin derivatives. This review discusses the basic properties of the different cyclodextrin derivatives, their potential in antiviral formulations, and the prevention and treatment of viral infections. The biologically active new cyclodextrin derivatives are also discussed.",
+    "tags": [
+      "cyclodextrin"
+    ]
+  },
+  {
+    "id": "S14",
+    "title": "Cyclodextrin Multicomponent Complexes: Pharmaceutical Applications",
+    "source": "Pharmaceutics",
+    "year": 2021,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/34371790/",
+    "doi": "10.3390/pharmaceutics13071099",
+    "pmid": "34371790",
+    "text": "Cyclodextrins (CDs) are naturally available water-soluble cyclic oligosaccharides widely used as carriers in the pharmaceutical industry for their ability to modulate several properties of drugs through the formation of drug-CD complexes. The addition of an auxiliary substance when forming multicomponent complexes is an adequate strategy to enhance complexation efficiency and to facilitate the therapeutic applicability of different drugs. This review discusses multicomponent complexation using amino acids; organic acids and bases; and water-soluble polymers as auxiliary excipients. Special attention is given to improved properties by including information on the solubility, dissolution, permeation, stability and bioavailability of several relevant drugs. In addition, the use of multicomponent CD complexes to enhance therapeutic drug effects is summarized.",
+    "tags": [
+      "cyclodextrin"
+    ]
+  },
+  {
+    "id": "S15",
+    "title": "Solubility of Cyclodextrins and Drug/Cyclodextrin Complexes",
+    "source": "Molecules (Basel, Switzerland)",
+    "year": 2018,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/29751694/",
+    "doi": "10.3390/molecules23051161",
+    "pmid": "29751694",
+    "text": "Cyclodextrins (CDs), a group of oligosaccharides formed by glucose units bound together in a ring, show a promising ability to form complexes with drug molecules and improve their physicochemical properties without molecular modifications. The stoichiometry of drug/CD complexes is most frequently 1:1. However, natural CDs have a tendency to self-assemble and form aggregates in aqueous media. CD aggregation can limit their solubility. Through derivative formation, it is possible to enhance their solubility and complexation capacity, but this depends on the type of substituent and degree of substitution. Formation of water-soluble drug/CD complexes can increase drug permeation through biological membranes. To maximize drug permeation the amount of added CD into pharmaceutical preparation has to be optimized. However, solubility of CDs, especially that of natural CDs, is affected by the complex formation. The presence of pharmaceutical excipients, such as water-soluble polymers, preservatives, and surfactants, can influence the solubilizing abilities of CDs, but this depends on the excipients' physicochemical properties. The competitive CD complexation of drugs and excipients has to be considered during formulation studies.",
+    "tags": [
+      "cyclodextrin"
+    ]
+  },
+  {
+    "id": "S16",
+    "title": "Strategies to Improve Cannabidiol Bioavailability and Drug Delivery",
+    "source": "Pharmaceuticals (Basel, Switzerland)",
+    "year": 2024,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/38399459/",
+    "doi": "10.3390/ph17020244",
+    "pmid": "38399459",
+    "text": "The poor physicochemical properties of cannabidiol (CBD) hamper its clinical development. The aim of this review was to examine the literature to identify novel oral products and delivery strategies for CBD, while assessing their clinical implications and translatability. Evaluation of the published literature revealed that oral CBD strategies are primarily focused on lipid-based and emulsion solutions or encapsulations, which improve the overall pharmacokinetics (PK) of CBD. Some emulsion formulations demonstrate more rapid systemic delivery. Variability in the PK effects of different oral CBD products is apparent across species. Several novel administration routes exist for CBD delivery that may offer promise for specific indications. For example, intranasal administration and inhalation allow quick delivery of CBD to the plasma and the brain, whereas transdermal and transmucosal administration routes deliver CBD systemically more slowly. There are limited but promising data on novel delivery routes such as intramuscular and subcutaneous. Very limited data show that CBD is generally well distributed across tissues and that some CBD products enable increased delivery of CBD to different brain regions. However, evidence is limited regarding whether changes in CBD PK profiles and tissue distribution equate to superior therapeutic efficacy across indications and whether specific CBD products might be suited to particular indications.",
+    "tags": [
+      "lipid-based formulation"
+    ]
+  },
+  {
+    "id": "S17",
+    "title": "Microemulsions and Nanoemulsions in Skin Drug Delivery",
+    "source": "Bioengineering (Basel, Switzerland)",
+    "year": 2022,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/35447718/",
+    "doi": "10.3390/bioengineering9040158",
+    "pmid": "35447718",
+    "text": "Microemulsions and nanoemulsions are lipid-based pharmaceutical systems with a high potential to increase the permeation of drugs through the skin. Although being isotropic dispersions of two nonmiscible liquids (oil and water), significant differences are encountered between microemulsions and nanoemulsions. Microemulsions are thermodynamically stable o/w emulsions of mean droplet size approximately 100-400 nm, whereas nanoemulsions are thermodynamically unstable o/w emulsions of mean droplet size approximately 1 to 100 nm. Their inner oil phase allows the solubilization of lipophilic drugs, achieving high encapsulation rates, which are instrumental for drug delivery. In this review, the importance of these systems, the key differences regarding their composition and production processes are discussed. While most of the micro/nanoemulsions on the market are held by the cosmetic industry to enhance the activity of drugs used in skincare products, the development of novel pharmaceutical formulations designed for the topical, dermal and transdermal administration of therapeutic drugs is being considered. The delivery of poorly water-soluble molecules through the skin has shown some advantages over the oral route, since drugs escape from first-pass metabolism; particularly for the treatment of cutaneous diseases, topical delivery should be the preferential route in order to reduce the number of drugs used and potential side-effects, while directing the drugs to the site of action. Thus, nanoemulsions and microemulsions represent versatile options for the delivery of drugs through lipophilic barriers, and many synthetic and natural compounds have been formulated using these delivery systems, aiming to improve stability, delivery and bioactivity. Detailed information is provided concerning the most relevant recent scientific publications reporting the potential of these delivery systems to increase the skin permeability of drugs with anti-inflammatory, sun-protection, anticarcinogenic and/or wound-healing activities. The main marketed skincare products using emulsion-based systems are also presented and discussed.",
+    "tags": [
+      "lipid-based formulation"
+    ]
+  },
+  {
+    "id": "S18",
+    "title": "Advances in Oral Drug Delivery",
+    "source": "Frontiers in pharmacology",
+    "year": 2021,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/33679401/",
+    "doi": "10.3389/fphar.2021.618411",
+    "pmid": "33679401",
+    "text": "The oral route is the most common route for drug administration. It is the most preferred route, due to its advantages, such as non-invasiveness, patient compliance and convenience of drug administration. Various factors govern oral drug absorption including drug solubility, mucosal permeability, and stability in the gastrointestinal tract environment. Attempts to overcome these factors have focused on understanding the physicochemical, biochemical, metabolic and biological barriers which limit the overall drug bioavailability. Different pharmaceutical technologies and drug delivery systems including nanocarriers, micelles, cyclodextrins and lipid-based carriers have been explored to enhance oral drug absorption. To this end, this review will discuss the physiological, and pharmaceutical barriers influencing drug bioavailability for the oral route of administration, as well as the conventional and novel drug delivery strategies. The challenges and development aspects of pediatric formulations will also be addressed.",
+    "tags": [
+      "lipid-based formulation"
+    ]
+  },
+  {
+    "id": "S19",
+    "title": "Self-microemulsifying drug delivery system (SMEDDS)--challenges and road ahead",
+    "source": "Drug delivery",
+    "year": 2015,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/24670091/",
+    "doi": "10.3109/10717544.2014.896058",
+    "pmid": "24670091",
+    "text": "Self-microemulsifying drug delivery system (SMEDDS) has emerged as a vital strategy to formulate poor water soluble compounds for bioavailability enhancement. However, certain limitations are associated with SMEDDS formulations which include in vivo drug precipitation, formulation handling issues, limited lymphatic uptake, lack of predictive in vitro tests and oxidation of unsaturated fatty acids. These limitations restrict their potential usage. Inclusion of polymers or precipitation inhibitors within lipid based formulations helps to maintain drug supersaturation after dispersion. This, thereby, improves the bioavailability and reduces the variability on exposure. Also, formulating solid SMEDDS helps to overcome liquid handling and stability problems. Usage of medium chain triglycerides (MCT) and suitable antioxidants to minimize oxidation of unsaturated fatty acids are few of the steps to overcome the limitations associated with SMEDDS. The review discussed here, in detail, the limitations of SMEDDS and suitable measures that can be taken to overcome them.",
+    "tags": [
+      "lipid-based formulation",
+      "supersaturating formulation",
+      "precipitation inhibition"
+    ]
+  },
+  {
+    "id": "S20",
+    "title": "Lipid-Based Drug Delivery Systems",
+    "source": "Journal of pharmaceutics",
+    "year": 2014,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/26556202/",
+    "doi": "10.1155/2014/801820",
+    "pmid": "26556202",
+    "text": "The principle objective of formulation of lipid-based drugs is to enhance their bioavailability. The use of lipids in drug delivery is no more a new trend now but is still the promising concept. Lipid-based drug delivery systems (LBDDS) are one of the emerging technologies designed to address challenges like the solubility and bioavailability of poorly water-soluble drugs. Lipid-based formulations can be tailored to meet a wide range of product requirements dictated by disease indication, route of administration, cost consideration, product stability, toxicity, and efficacy. These formulations are also a commercially viable strategy to formulate pharmaceuticals, for topical, oral, pulmonary, or parenteral delivery. In addition, lipid-based formulations have been shown to reduce the toxicity of various drugs by changing the biodistribution of the drug away from sensitive organs. However, the number of applications for lipid-based formulations has expanded as the nature and type of active drugs under investigation have become more varied. This paper mainly focuses on novel lipid-based formulations, namely, emulsions, vesicular systems, and lipid particulate systems and their subcategories as well as on their prominent applications in pharmaceutical drug delivery.",
+    "tags": [
+      "lipid-based formulation"
+    ]
+  },
+  {
+    "id": "S21",
+    "title": "Nanosuspension-Based Drug Delivery Systems for Topical Applications",
+    "source": "International journal of nanomedicine",
+    "year": 2024,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/38293608/",
+    "doi": "10.2147/IJN.S447429",
+    "pmid": "38293608",
+    "text": "Nanosuspensions have garnered recent attention as a promising strategy for mitigating the bioavailability challenges of hydrophobic drugs, particularly those characterized by poor solubility in both aqueous and organic environments. Addressing solubility issues associated with poorly water-soluble drugs has largely resolved the need to enhance drug absorption and bioavailability. As mucosal formulations and topical administration progress in the future, nanosuspension drug delivery, straightforward formulation techniques, and versatile applications will continue to be subjects of interest. Nanosuspensions have undergone extensive scrutiny in preparation for topical applications, encompassing ocular, pulmonary, and dermal usage. Among the numerous methods aimed at improving cutaneous application, nanocrystals represent a relatively recent yet profoundly intriguing approach. Despite the increasing availability of various nanosuspension products, primarily designed for oral administration, only a limited number of studies have explored skin permeability and drug accumulation in the context of nanosuspensions. Nevertheless, the scant published research unequivocally underscores the potential of this approach for enhancing cutaneous bioavailability, particularly for active ingredients with low to medium solubility. Nanocrystals exhibit increased skin adhesiveness in addition to heightened saturation solubility and dissolution rate, thereby augmenting cutaneous distribution. The article provides a comprehensive overview of nanosuspensions for topical application. The methodology employed is robust, with a well-defined experimental design; however, the limited sample size raises concerns about the generalizability of the findings. While the results demonstrate promising outcomes in terms of enhanced drug delivery, the discussion falls short of addressing certain limitations. Additionally, the references largely focus on recent studies, but a more diverse inclusion of historical perspectives could offer a more holistic view of the subject.",
+    "tags": [
+      "nanosuspension",
+      "particle size reduction"
+    ]
+  },
+  {
+    "id": "S22",
+    "title": "Formulation Strategies of Nanosuspensions for Various Administration Routes",
+    "source": "Pharmaceutics",
+    "year": 2023,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/37242763/",
+    "doi": "10.3390/pharmaceutics15051520",
+    "pmid": "37242763",
+    "text": "Nanosuspensions (NSs), which are nanosized colloidal particle systems, have recently become one of the most interesting substances in nanopharmaceuticals. NSs have high commercial potential because they provide the enhanced solubility and dissolution of low-water-soluble drugs by means of their small particle sizes and large surface areas. In addition, they can alter the pharmacokinetics of the drug and, thus, improve its efficacy and safety. These advantages can be used to enhance the bioavailability of poorly soluble drugs in oral, dermal, parenteral, pulmonary, ocular, or nasal routes for systemic or local effects. Although NSs often consist mainly of pure drugs in aqueous media, they can also contain stabilizers, organic solvents, surfactants, co-surfactants, cryoprotectants, osmogents, and other components. The selection of stabilizer types, such as surfactants or/and polymers, and their ratio are the most critical factors in NS formulations. NSs can be prepared both with top-down methods (wet milling, dry milling, high-pressure homogenization, and co-grinding) and with bottom-up methods (anti-solvent precipitation, liquid emulsion, and sono-precipitation) by research laboratories and pharmaceutical professionals. Nowadays, techniques combining these two technologies are also frequently encountered. NSs can be presented to patients in liquid dosage forms, or post-production processes (freeze drying, spray drying, or spray freezing) can also be applied to transform the liquid state into the solid state for the preparation of different dosage forms such as powders, pellets, tablets, capsules, films, or gels. Thus, in the development of NS formulations, the components/amounts, preparation methods, process parameters/levels, administration routes, and dosage forms must be defined. Moreover, those factors that are the most effective for the intended use should be determined and optimized. This review discusses the effect of the formulation and process parameters on the properties of NSs and highlights the recent advances, novel strategies, and practical considerations relevant to the application of NSs to various administration routes.",
+    "tags": [
+      "nanosuspension"
+    ]
+  },
+  {
+    "id": "S23",
+    "title": "Smartcrystals for Efficient Dissolution of Poorly Water-Soluble Meloxicam",
+    "source": "Pharmaceutics",
+    "year": 2022,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/35213978/",
+    "doi": "10.3390/pharmaceutics14020245",
+    "pmid": "35213978",
+    "text": "Nanocrystal is widely applied to improve the dissolution of poorly water-soluble drugs. We aimed to prepare meloxicam (MLX) nanocrystals using the bead mill method, followed by high-pressure homogenization (HPH). Simple drying at room temperature (RD), vacuum-drying (VD), and freeze-drying (FD) using mannitol or trehalose as a cryoprotectant were applied to obtain dry nanocrystals. The nanocrystals were fully characterized. The MLX nanosuspension containing 5% w/v MLX and 1% w/v of Pluronic F68 showing a mean particle size (MPS) of 242 nm and a polydispersity index (PDI) of 0.36 was prepared after 40 min of premilling and 30 min of HPH. The dried nanocrystals were spherical within the nano range. DSC and XRPD confirmed the absence of MLX amorphization. The smartcrystals showed enhanced MLX release. Approximately 100% release was achieved with phosphate buffer (PB), pH 5.6, and 80% was released with PB, pH 7.4, from the freeze-dried samples. The results revealed the effects of the drying method and cryoprotectant type on the properties of dry nanocrystals. The freeze-dried samples showed the smallest particle size, in particular trehalose-based samples. On the other hand, mannitol-based dried samples showed the highest crystallinity index among all nanocrystals (77.8%), whereas trehalose showed the lowest (59.2%). These factors explained the dissolution differences among the samples.",
+    "tags": [
+      "nanosuspension"
+    ]
+  },
+  {
+    "id": "S24",
+    "title": "Production and isolation of pharmaceutical drug nanoparticles",
+    "source": "International journal of pharmaceutics",
+    "year": 2021,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/33992712/",
+    "doi": "10.1016/j.ijpharm.2021.120708",
+    "pmid": "33992712",
+    "text": "Nanosizing of pharmaceutical drug particles is one of the most important drug delivery platforms approaches for the commercial development of poorly water-soluble drug molecules. Though nanosizing of drug particles has been proven to greatly enhance drugs dissolution rate and apparent solubility, nanosized materials have presented significant challenges for their formulation as solid dosage forms (e.g. tablets, capsules). This is due to the strong Van der Waals attraction forces between dry nanoparticles leading to aggregation, cohesion, and consequently poor flowability. In this review, the broad area of nanomedicines is overviewed with the primary focus on drug nanocrystals and the top-down and bottom-up methods used in their fabrication. The review also looks at how nanosuspensions of pharmaceutical drugs are generated and stabilised, followed by subsequent strategies for isolation of the nanoparticles. A perspective on the future outlook for drug nanocrystals is also presented.",
+    "tags": [
+      "nanosuspension",
+      "particle size reduction"
+    ]
+  },
+  {
+    "id": "S25",
+    "title": "Bioavailability Enhancement of Poorly Water-Soluble Drugs via Nanocomposites: Formulation⁻Processing Aspects and Challenges",
+    "source": "Pharmaceutics",
+    "year": 2018,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/29986543/",
+    "doi": "10.3390/pharmaceutics10030086",
+    "pmid": "29986543",
+    "text": "Drug nanoparticles embedded in a dispersant matrix as a secondary phase, i.e., drug-laden nanocomposites, offer a versatile delivery platform for enhancing the dissolution rate and bioavailability of poorly water-soluble drugs. Drug nanoparticles are prepared by top-down, bottom-up, or combinative approaches in the form of nanosuspensions, which are subsequently dried to prepare drug-laden nanocomposites. In this comprehensive review paper, the term &ldquo;nanocomposites&rdquo; is used in a broad context to cover drug nanoparticle-laden intermediate products in the form of powders, cakes, and extrudates, which can be incorporated into final oral solid dosages via standard pharmaceutical unit operations, as well as drug nanoparticle-laden strip films. The objective of this paper is to review studies from 2012⁻2017 in the field of drug-laden nanocomposites. After a brief overview of the various approaches used for preparing drug nanoparticles, the review covers drying processes and dispersant formulations used for the production of drug-laden nanocomposites, as well as various characterization methods including quiescent and agitated redispersion tests. Traditional dispersants such as soluble polymers, surfactants, other water-soluble dispersants, and water-insoluble dispersants, as well as novel dispersants such as wet-milled superdisintegrants, are covered. They exhibit various functionalities such as drug nanoparticle stabilization, mitigation of aggregation, formation of nanocomposite matrix⁻film, wettability enhancement, and matrix erosion/disintegration. Major challenges such as nanoparticle aggregation and poor redispersibility that cause inferior dissolution performance of the drug-laden nanocomposites are highlighted. Literature data are analyzed in terms of usage frequency of various drying processes and dispersant classes. We provide some engineering considerations in comparing drying processes, which could account for some of the diverging trends in academia vs. industrial practice. Overall, this review provides rationale and guidance for drying process selection and robust nanocomposite formulation development, with insights into the roles of various classes of dispersants.",
+    "tags": [
+      "nanosuspension",
+      "poorly soluble oral drugs"
+    ]
+  },
+  {
+    "id": "S26",
+    "title": "Drug nanocrystals: Surface engineering and its applications in targeted delivery",
+    "source": "iScience",
+    "year": 2024,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/39555405/",
+    "doi": "10.1016/j.isci.2024.111185",
+    "pmid": "39555405",
+    "text": "Drug nanocrystals have received significant attention in drug development due to their enhanced dissolution rate and improved water solubility, making them effective in overcoming issues related to drug hydrophobicity, thereby improving drug bioavailability and treatment effectiveness. Recent advances in preparation techniques have facilitated research on drug surface properties, leading to valuable surface engineering strategies. Surface modification can stabilize drug nanocrystals, making them suitable for versatile drug delivery platforms. Functionalized ligands further enhance the potential for targeted delivery, enabling precision medicine. This review focuses on the surface engineering of drug nanocrystals, discussing various preparation methods, surface ligand design strategies, and their applications in targeted drug delivery, especially for cancer treatments. Finally, challenges and future directions are also discussed to promote the development of drug nanocrystals. The surface engineering of drug nanocrystals promises new opportunities for treating complex and chronic diseases while broadening the application of drug delivery systems.",
+    "tags": [
+      "particle size reduction"
+    ]
+  },
+  {
+    "id": "S27",
+    "title": "Drug Nanocrystals in Oral Absorption: Factors That Influence Pharmacokinetics",
+    "source": "Pharmaceutics",
+    "year": 2024,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/39339178/",
+    "doi": "10.3390/pharmaceutics16091141",
+    "pmid": "39339178",
+    "text": "Despite the safety and convenience of oral administration, poorly water-soluble drugs compromise absorption and bioavailability. These drugs can exhibit low dissolution rates, variability between fed and fasted states, difficulty permeating the mucus layer, and P-glycoprotein efflux. Drug nanocrystals offer a promising strategy to address these challenges. This review focuses on the opportunities to develop orally administered nanocrystals based on pharmacokinetic outcomes. The impacts of the drug particle size, morphology, dissolution rate, crystalline state on oral bioavailability are discussed. The potential of the improved dissolution rate to eliminate food effects during absorption is also addressed. This review also explores whether permeation or dissolution drives nanocrystal absorption. Additionally, it addresses the functional roles of stabilizers. Drug nanocrystals may result in prolonged concentrations in the bloodstream in some cases. Therefore, nanocrystals represent a promising strategy to overcome the challenges of poorly water-soluble drugs, thus encouraging further investigation into unclear mechanisms during oral administration.",
+    "tags": [
+      "particle size reduction"
+    ]
+  },
+  {
+    "id": "S28",
+    "title": "Antifungal and Antiparasitic Drug Delivery",
+    "source": "Pharmaceutics",
+    "year": 2020,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/32260348/",
+    "doi": "10.3390/pharmaceutics12040324",
+    "pmid": "32260348",
+    "text": "Fungal and parasitic diseases affect more than a billion people across the globe, one-sixth of the world's population, mostly located in developing countries. The lack of effective and safer treatments combined with a deficient diagnosis lead to serious chronic illness or even death. There is a mismatch between the rate of drug resistance and the development of new medicines. Formulation of antifungal and antiparasitic drugs adapted to different administration routes is challenging, bearing in mind their poor water solubility, which limits their bioavailability and efficacy. Hence, there is an unmet clinical need to develop vaccines and novel formulations and drug delivery strategies that can improve the bioavailability and therapeutic effect by enhancing their dissolution, increasing their chemical potency, stabilising the drug and targeting high concentration of drug to the infection sites. This Editorial regards the ten research contributions presented in the Special Issue \"Antifungal and Antiparasitic Drug Delivery\".",
+    "tags": [
+      "particle size reduction"
+    ]
+  },
+  {
+    "id": "S29",
+    "title": "Nanosizing of drugs: Effect on dissolution rate",
+    "source": "Research in pharmaceutical sciences",
+    "year": 2015,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/26487886/",
+    "doi": "",
+    "pmid": "26487886",
+    "text": "The solubility, bioavailability and dissolution rate of drugs are important parameters for achieving in vivo efficiency. The bioavailability of orally administered drugs depends on their ability to be absorbed via gastrointestinal tract. For drugs belonging to Class II of pharmaceutical classification, the absorption process is limited by drug dissolution rate in gastrointestinal media. Therefore, enhancement of the dissolution rate of these drugs will present improved bioavailability. So far several techniques such as physical and chemical modifications, changing in crystal habits, solid dispersion, complexation, solubilization and liquisolid method have been used to enhance the dissolution rate of poorly water soluble drugs. It seems that improvement of the solubility properties ofpoorly water soluble drugscan translate to an increase in their bioavailability. Nowadays nanotechnology offers various approaches in the area of dissolution enhancement of low aqueous soluble drugs. Nanosizing of drugs in the form of nanoparticles, nanocrystals or nanosuspensions not requiring expensive facilities and equipment or complicated processes may be applied as simple methods to increase the dissolution rate of poorly water soluble drugs. In this article, we attempted to review the effects of nanosizing on improving the dissolution rate of poorly aqueous soluble drugs. According to the reviewed literature, by reduction of drug particle size into nanometer size the total effective surface area is increased and thereby dissolution rate would be enhanced. Additionally, reduction of particle size leads to reduction of the diffusion layer thickness surrounding the drug particles resulting in the increment of the concentration gradient. Each of these process leads to improved bioavailability.",
+    "tags": [
+      "particle size reduction"
+    ]
+  },
+  {
+    "id": "S30",
+    "title": "Combinative Particle Size Reduction Technologies for the Production of Drug Nanocrystals",
+    "source": "Journal of pharmaceutics",
+    "year": 2014,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/26556191/",
+    "doi": "10.1155/2014/265754",
+    "pmid": "26556191",
+    "text": "Nanosizing is a suitable method to enhance the dissolution rate and therefore the bioavailability of poorly soluble drugs. The success of the particle size reduction processes depends on critical factors such as the employed technology, equipment, and drug physicochemical properties. High pressure homogenization and wet bead milling are standard comminution techniques that have been already employed to successfully formulate poorly soluble drugs and bring them to market. However, these techniques have limitations in their particle size reduction performance, such as long production times and the necessity of employing a micronized drug as the starting material. This review article discusses the development of combinative methods, such as the NANOEDGE, H 96, H 69, H 42, and CT technologies. These processes were developed to improve the particle size reduction effectiveness of the standard techniques. These novel technologies can combine bottom-up and/or top-down techniques in a two-step process. The combinative processes lead in general to improved particle size reduction effectiveness. Faster production of drug nanocrystals and smaller final mean particle sizes are among the main advantages. The combinative particle size reduction technologies are very useful formulation tools, and they will continue acquiring importance for the production of drug nanocrystals.",
+    "tags": [
+      "particle size reduction"
+    ]
+  },
+  {
+    "id": "S31",
+    "title": "An overview of oral bioavailability enhancement through self-emulsifying drug delivery systems",
+    "source": "Expert opinion on drug delivery",
+    "year": 2025,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/40078056/",
+    "doi": "10.1080/17425247.2025.2479759",
+    "pmid": "40078056",
+    "text": "Introduction: The pharmaceutical technologists face a lot of challenges and limitations when designing novel drug delivery systems such as low oral bioavailability of many drugs, primarily due to poor solubility, slow dissolution rates, limited permeability through gastrointestinal mucosa, and rapid degradation within the body. Areas Covered: The biopharmaceutical classification (BCS) classification represents a map in drug delivery research. Numerous active ingredients are characterized by low bioavailability due to poor water solubility, especially active ingredients of BCS class II and IV. Self-emulsifying drug delivery systems (SEDDS) could act as game changer in order to overcome the challenges and limitations of poor bioavailability. In this review, timelines representing the launch of self-emulsifying drug delivery systems, their introduction to the pharmaceutical platform and their benefits will be discussed in detail. Expert Opinion: The development of multifunctional systems capable of combining controlled release, targeted delivery, and diagnostic capabilities is a promising avenue. As the technology matures, self-microemulsifying drug delivery systems and self-nanoemulsifying drug delivery systems are likely to become a standard approach for delivering BCS class II and IV drugs, transforming the pharmaceutical landscape.",
+    "tags": [
+      "poorly soluble oral drugs"
+    ]
+  },
+  {
+    "id": "S32",
+    "title": "Advances in Nanotechnology for Enhancing the Solubility and Bioavailability of Poorly Soluble Drugs",
+    "source": "Drug design, development and therapy",
+    "year": 2024,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/38707615/",
+    "doi": "10.2147/DDDT.S447496",
+    "pmid": "38707615",
+    "text": "This manuscript offers a comprehensive overview of nanotechnology's impact on the solubility and bioavailability of poorly soluble drugs, with a focus on BCS Class II and IV drugs. We explore various nanoscale drug delivery systems (NDDSs), including lipid-based, polymer-based, nanoemulsions, nanogels, and inorganic carriers. These systems offer improved drug efficacy, targeting, and reduced side effects. Emphasizing the crucial role of nanoparticle size and surface modifications, the review discusses the advancements in NDDSs for enhanced therapeutic outcomes. Challenges such as production cost and safety are acknowledged, yet the potential of NDDSs in transforming drug delivery methods is highlighted. This contribution underscores the importance of nanotechnology in pharmaceutical engineering, suggesting it as a significant advancement for medical applications and patient care.",
+    "tags": [
+      "poorly soluble oral drugs"
+    ]
+  },
+  {
+    "id": "S33",
+    "title": "Soluplus® polymeric nanomicelles improve solubility of BCS-class II drugs",
+    "source": "Drug delivery and translational research",
+    "year": 2022,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/35604634/",
+    "doi": "10.1007/s13346-022-01182-x",
+    "pmid": "35604634",
+    "text": "The issue of poor aqueous solubility is often a great hitch in the development of liquid dosage forms for those drugs that the Biopharmaceutics Classification System (BCS) includes in classes II and IV. Among the possible technological solutions, inclusion of the drug molecule within polymeric micelles, and particularly nanomicelles, has been proposed in the last years as a valid strategy. Our attention has been recently attracted by Soluplus®, an amphiphilic polyvinyl caprolactam-polyvinyl acetate-polyethylene glycol graft copolymer able to form small and stable nanomicelles. The aim of this study was to characterize Soluplus® nanomicelles to enhance the apparent solubility of three model APIs, categorized in BCS class II: ibuprofen (IBU), idebenone (IDE), and miconazole (MIC). Drug-loaded Soluplus® micelles with a mean size around 60-70 nm were prepared by two methods (direct dissolution or film hydration method). The prepared nanosystems were characterized in terms of mean particle size and Zeta potential, physical stability, drug solubility, and in vitro drug release. The solubility of the tested APIs was shown to increase linearly with the concentration of graft copolymer. Soluplus® can be easily submitted to membrane filtration (0.2 µm PES or PTFE membranes), showing the potential to be sterilized by this method. Freeze-drying enabled to obtain powder materials that, upon reconstitution with water, maintained the initial micelle size. Finally, viscosity studies indicated that these nanomicelles have potential applications where a bioadhesive material is advantageous, such as in topical ocular administration.",
+    "tags": [
+      "poorly soluble oral drugs"
+    ]
+  },
+  {
+    "id": "S34",
+    "title": "Aerogels in drug delivery: From design to application",
+    "source": "Journal of controlled release : official journal of the Controlled Release Society",
+    "year": 2021,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/33600880/",
+    "doi": "10.1016/j.jconrel.2021.02.012",
+    "pmid": "33600880",
+    "text": "Aerogels are the lightest processed solid materials on Earth and with the largest empty volume fraction in their structure. Composition versatility, modularity, and feasibility of industrial scale manufacturing are behind the fast emergence of aerogels in the drug delivery field. Compared to other 3D materials, the high porosity (interconnected mesopores) and high specific surface area of aerogels may allow faster loading of small-molecule drugs, less constrained access to inner regions of the matrix, and more efficient interactions of the biological milieu with the polymer matrix. Processing in supercritical CO2 medium for both aerogel production (drying) and drug loading (impregnation) has remarkable advantages such as absence of an oxidizing environment, clean manufacture, and easiness for the scale-up under good manufacturing practices. The aerogel solid skeleton dictates the chemical affinity to the different drugs, which in turn determines the loading efficiency and the release pattern. Aerogels can be used to increase the solubility of BCS Class II and IV drugs because the drug can be deposited in amorphous state onto the large surface area of the skeleton, which facilitates a rapid contact with the body fluids, dissolution, and release. Conversely, tuning the aerogel structure by functionalization with drug-binding moieties or stimuli-responsive components, application of coatings and incorporation of drug-loaded aerogels into other matrices may enable site-specific, stimuli-responsive, or prolonged drug release. The present review deals with last decade advances in aerogels for drug delivery. An special focus is paid first on the loading efficiency of active ingredients and release kinetics under biorelevant conditions. Subsequent sections deal with aerogels intended to address specific therapeutic demands. In addition to oral delivery, the physical properties of the aerogels appear to be very advantageous for mucosal administration routes, such as pulmonary, nasal, or transdermal. A specific section devoted to recent achievements in gene therapy and theranostics is also included. In the last section, scale up strategies and life cycle assessment are comprehensively addressed.",
+    "tags": [
+      "poorly soluble oral drugs"
+    ]
+  },
+  {
+    "id": "S35",
+    "title": "The polymorphism of statins and its effect on their physicochemical properties",
+    "source": "Polimery w medycynie",
+    "year": 2018,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/30916495/",
+    "doi": "10.17219/pim/102978",
+    "pmid": "30916495",
+    "text": "Polymorphism of pharmaceutical substances has a significant impact on their physicochemical properties, durability, bioavailability and consequently on their pharmacological activity. Solid dosage forms may exist in both crystalline and amorphous forms. Amorphous varieties are characterized by higher solubility and dissolution rates, while crystalline forms show greater purity and storage stability. The choice between the crystalline or amorphous form of a drug is extremely important to ensure effective and safe pharmacotherapy. Statins - the most commonly used group of drugs in the treatment of lipid disorders - are an example of drugs that occur in many crystalline and amorphous forms. Statins belong to class II in the biopharmaceutical classification system (BCS), which means that they are poorly soluble, but permeate biological membranes well. The bioavailability of statins shows considerable variation, which is associated with the first-pass effect in the liver and the accumulation of the drug in the hepatocytes. The improvement of bioavailability after oral administration of poorly soluble medicinal substances remains one of the most challenging aspects of the drug development process. A specific polymorphic form is obtained by applying appropriate conditions during the process of its preparation under industrial conditions, including the use of a suitable solvent, a specific temperature or rate of crystallization. The article provides a comprehensive update on the current knowledge of the influence of polymorphic form on statin solubility and bioavailability. Research is still being carried out to obtain new polymorphic varieties of statins that are characterized by better physicochemical and pharmacokinetic parameters.",
+    "tags": [
+      "poorly soluble oral drugs"
+    ]
+  },
+  {
+    "id": "S36",
+    "title": "Absorption of cinnarizine from type IIIb lipid-based formulations: Impact of supersaturation, digestion and precipitation inhibition",
+    "source": "International journal of pharmaceutics",
+    "year": 2025,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/40441337/",
+    "doi": "10.1016/j.ijpharm.2025.125780",
+    "pmid": "40441337",
+    "text": "In line with previous studies using a similar protocol for the more lipophilic type I, type II and type IIIa lipid-based formulations (LBFs), the impact of supersaturation, lipase inhibition, and precipitation inhibition on type IIIb LBFs containing the poorly water soluble drug cinnarizine was investigated after oral administration to rats. Supersaturated type IIIb LBFs outperformed non-supersaturated LBFs, with statistically significant 58 - 124 % increases in the area under the curve (AUC0-24h) and 26 - 82 % increases in the maximal plasma concentration (Cmax), which also were significant in most cases. The advantage of supersaturated LBFs in terms of AUC0-24h vanished upon dose-normalization, but Cmax still tended to be higher for the supersaturated formulations. Lipase inhibition only had a minor impact on cinnarizine absorption from type IIIb LBFs, as similar AUC0-24h and Cmaxwere observed from formulations investigated with or without co-administration of a lipase inhibitor. The addition of the amphiphilic polymer Soluplus®did not bring a benefit in terms of drug exposure for type IIIb LBFs, despite high drug loads in supersaturated formulations containing Soluplus®. This study therefore clearly shows the benefit of supersaturated type IIIb LBFs as compared to non-supersaturated LBFs. Along with general learnings about LBFs type IIIb the study also shows that lipase activity is less critical for both - saturated or supersaturated formulations as compared to formulations with a higher glycerol ester content.",
+    "tags": [
+      "precipitation inhibition"
+    ]
+  },
+  {
+    "id": "S37",
+    "title": "Digestion is a critical element for absorption of cinnarizine from supersaturated lipid-based type I formulations",
+    "source": "European journal of pharmaceutical sciences : official journal of the European Federation for Pharmaceutical Sciences",
+    "year": 2024,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/37951315/",
+    "doi": "10.1016/j.ejps.2023.106634",
+    "pmid": "37951315",
+    "text": "Enabling formulations, such as lipid-based formulations (LBFs), are means to deliver challenging-to-formulate, poorly soluble drugs. LBFs may be composed of lipids, surfactants and/or cosolvents and can be classified depending on the proportions of the components and the hydrophilicity of the surfactant according to the Lipid Formulations Classification System, ranging from type I (very lipophilic) to type IV (hydrophilic). In cases where drug solubility in LBFs does not suffice, e.g. for preclinical toxicity studies, supersaturated LBFs can be used in order to increase the drug load. However, the effect of digestion on drug absorption from supersaturated type I formulations (consisting exclusively of lipids) still remains relatively unexplored and unclear. In the present study, the impact of lipid digestion on absorption of cinnarizine-loaded supersaturated lipid-based formulations of type I was investigated in rats by pre-dosing of the lipase inhibitor orlistat. The lipid chain length and the drug dose were varied by testing medium-chain triglycerides (MCT) and long-chain triglycerides (LCT), both supersaturated and non-supersaturated. Due to the physical instability of supersaturated formulations of cinnarizine, i.e. a potential of precipitation of cinnarizine, the impact of the addition of the amphiphilic polymer Soluplus®, as a potential precipitation inhibitor, was also investigated. The supersaturated systems resulted in a 2.3 - 3.3-fold higher Area Under the Curve (AUC0-24 h, not dose-normalized) and 1.4 - 2.2-fold higher maximum plasma concentration (Cmax, not dose-normalized) than non-supersaturated formulations (statistically significant with p = 0.05), whereas the addition of Soluplus® did not reveal any benefit. Results indicated that lipase inhibition affected the in vivo performance of LBFs: Co-administration of the lipase inhibitor significantly reduced Cmax and AUC0-24 h (both to 33-39 %, not dose-normalized) for the LCT formulations and, though not significant, a similar trend was observed for the AUC0-24 h of the MCT formulations (to 53-87 %), suggesting a higher dependency on lipolysis for LCT. Also, tmax tended to decrease to 20-60 % when compared to the animals not dosed with orlistat but lacking statistical significance. Without lipase inhibition, the LCT in general lead to better absorption of cinnarizine as compared to MCT, with 1.2-1.7-fold higher AUC0-24 h and 1.4-1.8-fold higher Cmax, but without showing statistical significance. Overall, the study revealed that lipolysis plays a major role in drug absorption from supersaturated lipid-based formulations type I.",
+    "tags": [
+      "precipitation inhibition"
+    ]
+  },
+  {
+    "id": "S38",
+    "title": "Intestinal mucus is capable of stabilizing supersaturation of poorly water-soluble drugs",
+    "source": "Journal of controlled release : official journal of the Controlled Release Society",
+    "year": 2019,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/30527813/",
+    "doi": "10.1016/j.jconrel.2018.11.023",
+    "pmid": "30527813",
+    "text": "The utilization of polymers to stabilize drug supersaturation and enhance oral drug absorption has recently garnered considerable interest. The potential role of intestinal mucus in stabilizing drug supersaturation, however, has not been previously explored. The ability for intestinal mucus to stabilize drug supersaturation and delay drug precipitation is potentially useful in enhancing the absorption of orally dosed compounds from drug delivery systems that generate supersaturation within the gastrointestinal tract (e.g., solid dispersions, lipid-based drug delivery systems). This work aims to evaluate the precipitation-delaying abilities of intestinal mucus using carvedilol (CVDL) and piroxicam (PXM) as model drugs. In supersaturation-precipitation (S-P) experiments, CVDL and PXM supersaturation were induced in test media (0, 0.1, 0.2, 0.4%w/v mucin and 8%w/v native pig intestinal mucus (PIM)) via the solvent-shift method at supersaturation ratios (SSR) of 5 and 6, respectively. Time to drug precipitation was assessed using ion-selective electrodes and HPLC. The S-P experiments showed that increasing mucin concentration led to increasingly delayed CVDL precipitation, while PXM precipitation was prevented at all mucin concentrations studied. The ability of mucus-stabilized CVDL supersaturation to translate into enhanced CVDL absorption was evaluated in transport experiments using mucus-producing (90% Caco-2:10% HT29-MTX-E12 co-cultures) vs. non-mucus-producing intestinal monolayers (100% Caco-2 cultures). The absorption enhancement of CVDL (SSR = 5 relative to SSR = 1) was higher across mucus-producing than non-mucus-producing intestinal monolayers. This work demonstrates the potential for intestinal mucus to delay the precipitation and enhance the absorption of poorly water-soluble compounds, suggesting that drug supersaturation can be stabilized in close proximity to the absorptive site, thereby presenting a possible novel approach for targeted supersaturating drug delivery systems.",
+    "tags": [
+      "precipitation inhibition"
+    ]
+  },
+  {
+    "id": "S39",
+    "title": "Enhanced dissolution and oral absorption of tacrolimus by supersaturable self-emulsifying drug delivery system",
+    "source": "International journal of nanomedicine",
+    "year": 2016,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/27051286/",
+    "doi": "10.2147/IJN.S102991",
+    "pmid": "27051286",
+    "text": "A new Soluplus (polyvinyl caprolactam-polyvinyl acetate-polyethylene glycol graft copolymer)-based supersaturable self-emulsifying drug delivery system (S-SEDDS) was formulated to enhance oral absorption of tacrolimus (FK506) with minimal use of oil, surfactant, and cosurfactant. A high payload supersaturable system (S-SEDDS) was prepared by incorporating Soluplus, as a precipitation inhibitor, to SEDDS consisting of Capmul MCM, Cremophor EL, and Transcutol (FK506:vehicle:Soluplus =1:15:1). In vitro dissolution profile and in vitro pharmacokinetic aspect of S-SEDDS in rats were comparatively evaluated with those of conventional SEDDS formulas containing four times greater content of vehicle components (FK506:vehicle =1:60). Both formulations formed spherical drug-loaded microemulsion <70 nm in size when in contact with aqueous medium. In an in vitro dissolution test in a nonsink condition, the amphiphilic polymer noticeably retarded drug precipitation and maintained >80% of accumulated dissolution rate for 24 hours, analogous to that from conventional SEDDS. Moreover, pharmacokinetic parameters of the maximum blood concentration and area under the curve from S-SEDDS formula in rats were not statistically different (P>0.05) than those of conventional SEDDS. The results suggest that the Soluplus-based supersaturable system can be an alternative to achieve a comparable in vitro dissolution profile and in vivo oral absorption with conventional SEDDS, with minimal use of vehicle ingredients.",
+    "tags": [
+      "precipitation inhibition"
+    ]
+  },
+  {
+    "id": "S40",
+    "title": "In vitro and in vivo performance of supersaturable self-nanoemulsifying system of trans-resveratrol",
+    "source": "Artificial cells, nanomedicine, and biotechnology",
+    "year": 2016,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/25331709/",
+    "doi": "10.3109/21691401.2014.966192",
+    "pmid": "25331709",
+    "text": "To develop an optimized supersaturable self-nanoemulsifying drug delivery system (S-SNEDDS) in order to improve the oral bioavailability of trans-resveratrol (t-RVT), together with surmounting poor aqueous solubility, enterohepatic recirculation and controlling drug precipitation, by employing a precipitation inhibitor (PPI) that is, hydroxypropyl methylcellulose (HPMC). The long-term stability of a previously reported formulation optimized long chain triglycerides (OPT LCT-SNEDDS), consisting of Lauroglycol FCC and Transcutol P, indicated rapid precipitation of trans-resveratrol. Following incorporation of the selected PPI, the precipitates were differentiated using the X-ray diffraction (XRD) technique. An in vitro supersaturation test was carried out for the S-SNEDDS formulation. The S-SNEDDS formulation was appraised for pharmacokinetic and in situ perfusion studies. In vitro dilution of the S-SNEDDS formulation resulted in the formation of a nanoemulsion, followed by a slow precipitation of t-RVT in the S-SNEDDS formulation vis-à-vis SNEDDS formulated with OPT-LCT, where it undergoes rapid precipitation, yielding a low t-RVT concentration. The pharmacokinetic study indicated that the AUC(0-8h) of the S-SNEDDS formulation increased by nearly 1.33-fold in the presence of HPMC vis-à-vis the OPT LCT-SNEDDS, at a drug dose of 20 mg/kg. The in situ perfusion parameters, viz., fraction absorbed and effective permeability, demonstrated significant improvement in the rate and extent of absorption from the S-SNEDDS formulation. This case demonstrates that the supersaturatable approach is effective in delivering and in improving the oral bioavailability of t-RVT.",
+    "tags": [
+      "precipitation inhibition"
+    ]
+  },
+  {
+    "id": "S41",
+    "title": "Randomized trial of anetumab ravtansine and pembrolizumab compared to pembrolizumab for mesothelioma",
+    "source": "Lung cancer (Amsterdam, Netherlands)",
+    "year": 2024,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/39197359/",
+    "doi": "10.1016/j.lungcan.2024.107928",
+    "pmid": "39197359",
+    "text": "Purpose: The mesothelin-targeting antibody-drug conjugate anetumab ravtansine was evaluated in combination with the programmed cell death-1 (PD-1) inhibitor pembrolizumab based on the common expression of mesothelin and reports of activity in mesothelioma. Patients And Methods: A phase 1 safety run-in of the combination of anetumab ravtansine (6.5 mg/kg iv q3weeks) and pembrolizumab (200 mg, IV q3weeks) was conducted, followed by a phase 2 randomization to the combination or pembrolizumab alone at medical centers across the United States and Canada in the National Cancer Institute's Experimental Therapeutics Clinical Trials Network. Patients with pleural mesothelioma that expressed mesothelin and had previously received platinum-based therapy were eligible. Results: In phase 1 (n = 12) only one dose limiting toxicity was observed and the rules for dose reduction were not met. In phase 2, there was no difference in the confirmed response rates between the combination group (n = 18, 2 partial responses [PR], 11 %) and the pembrolizumab group (n = 17, 1 PR, 6 %; z = -0.5523, p = 0.29116). The median PFS was 12.2 months (95 % CI 5.1-not evaluable [NE]) for the combination, and 3.9 months for pembrolizumab (95 % CI 2.1-NE)(HR=0.55, p = 0.20). Patients with high baseline levels of soluble mesothelin who received anetumab ravtansine had a median PFS of 5 months. Conclusions: The numeric difference in PFS between treatment groups was not statistically significant, likely related to a smaller than planned sample size. High levels of soluble mesothelin should potentially be considered to select against the use of mesothelin-targeting therapies in development that are neutralized by soluble mesothelin.",
+    "tags": [
+      "salt formation"
+    ]
+  },
+  {
+    "id": "S42",
+    "title": "Bioavailability Enhancement Techniques for Poorly Aqueous Soluble Drugs and Therapeutics",
+    "source": "Biomedicines",
+    "year": 2022,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/36140156/",
+    "doi": "10.3390/biomedicines10092055",
+    "pmid": "36140156",
+    "text": "The low water solubility of pharmacoactive molecules limits their pharmacological potential, but the solubility parameter cannot compromise, and so different approaches are employed to enhance their bioavailability. Pharmaceutically active molecules with low solubility convey a higher risk of failure for drug innovation and development. Pharmacokinetics, pharmacodynamics, and several other parameters, such as drug distribution, protein binding and absorption, are majorly affected by their solubility. Among all pharmaceutical dosage forms, oral dosage forms cover more than 50%, and the drug molecule should be water-soluble. For good therapeutic activity by the drug molecule on the target site, solubility and bioavailability are crucial factors. The pharmaceutical industry's screening programs identified that around 40% of new chemical entities (NCEs) face various difficulties at the formulation and development stages. These pharmaceuticals demonstrate less solubility and bioavailability. Enhancement of the bioavailability and solubility of drugs is a significant challenge in the area of pharmaceutical formulations. According to the Classification of Biopharmaceutics, Class II and IV drugs (APIs) exhibit poor solubility, lower bioavailability, and less dissolution. Various technologies are discussed in this article to improve the solubility of poorly water-soluble drugs, for example, the complexation of active molecules, the utilization of emulsion formation, micelles, microemulsions, cosolvents, polymeric micelle preparation, particle size reduction technologies, pharmaceutical salts, prodrugs, the solid-state alternation technique, soft gel technology, drug nanocrystals, solid dispersion methods, crystal engineering techniques and nanomorph technology. This review mainly describes several other advanced methodologies for solubility and bioavailability enhancement, such as crystal engineering, micronization, solid dispersions, nano sizing, the use of cyclodextrins, solid lipid nanoparticles, colloidal drug delivery systems and drug conjugates, referring to a number of appropriate research reports.",
+    "tags": [
+      "salt formation",
+      "poorly soluble oral drugs"
+    ]
+  },
+  {
+    "id": "S43",
+    "title": "Amorphous Drug-Polymer Salts",
+    "source": "Pharmaceutics",
+    "year": 2021,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/34452231/",
+    "doi": "10.3390/pharmaceutics13081271",
+    "pmid": "34452231",
+    "text": "Amorphous formulations provide a general approach to improving the solubility and bioavailability of drugs. Amorphous medicines for global health should resist crystallization under the stressful tropical conditions (high temperature and humidity) and often require high drug loading. We discuss the recent progress in employing drug-polymer salts to meet these goals. Through local salt formation, an ultra-thin polyelectrolyte coating can form on the surface of amorphous drugs, immobilizing interfacial molecules and inhibiting fast crystal growth at the surface. The coated particles show improved wetting and dissolution. By forming an amorphous drug-polymer salt throughout the bulk, stability can be vastly enhanced against crystallization under tropical conditions without sacrificing the dissolution rate. Examples of these approaches are given, along with suggestions for future work.",
+    "tags": [
+      "salt formation"
+    ]
+  },
+  {
+    "id": "S44",
+    "title": "Machine-Vision-Enabled Salt Dissolution Analysis",
+    "source": "Analytical chemistry",
+    "year": 2020,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/32544319/",
+    "doi": "10.1021/acs.analchem.0c01068",
+    "pmid": "32544319",
+    "text": "Salt formation is a well-established method to increase the solubility of ionizable drug candidates. However, possible conversion of salt to its original form of free acid or base-disproportionation-can have a drastic effect on the solubility and consequently the bioavailability of a drug. Therefore, during the salt selection process, the salt dissolution behavior should be well understood. Improved understanding could be achieved by a method that enables simultaneous screening of small sample amounts and detailed dissolution process analysis. Here, we use a machine-vision-based single-particle analysis (SPA) method to successfully determine the pH-solubility profile, intrinsic solubility, common-ion effect, pKa, pHmax, and Ksp values of three model compounds in a fast and low sample consumption (<1 mg) manner. Moreover, the SPA method enables, with a particle-scale resolution, in situ observation of the disproportionation process and its immediate effect on the morphology and solubility of dissolving species. In this study, a potentially higher energy thermodynamic solid-state form of diclofenac free acid and an intriguing conversion to liquid verapamil free base were observed upon disproportionation of the respective salts. As such, the SPA method offers a low sample consumption platform for fast yet elaborate characterization of the salt dissolution behavior.",
+    "tags": [
+      "salt formation"
+    ]
+  },
+  {
+    "id": "S45",
+    "title": "Drug solubility: importance and enhancement techniques",
+    "source": "ISRN pharmaceutics",
+    "year": 2012,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/22830056/",
+    "doi": "10.5402/2012/195727",
+    "pmid": "22830056",
+    "text": "Solubility, the phenomenon of dissolution of solute in solvent to give a homogenous system, is one of the important parameters to achieve desired concentration of drug in systemic circulation for desired (anticipated) pharmacological response. Low aqueous solubility is the major problem encountered with formulation development of new chemical entities as well as for the generic development. More than 40% NCEs (new chemical entities) developed in pharmaceutical industry are practically insoluble in water. Solubility is a major challenge for formulation scientist. Any drug to be absorbed must be present in the form of solution at the site of absorption. Various techniques are used for the enhancement of the solubility of poorly soluble drugs which include physical and chemical modifications of drug and other methods like particle size reduction, crystal engineering, salt formation, solid dispersion, use of surfactant, complexation, and so forth. Selection of solubility improving method depends on drug property, site of absorption, and required dosage form characteristics.",
+    "tags": [
+      "salt formation"
+    ]
+  },
+  {
+    "id": "S46",
+    "title": "Supramolecular eutectogel as new oral paediatric delivery system to enhance benznidazole bioavailability",
+    "source": "International journal of pharmaceutics",
+    "year": 2024,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/38964489/",
+    "doi": "10.1016/j.ijpharm.2024.124417",
+    "pmid": "38964489",
+    "text": "Benznidazole (BNZ) serves as the primary drug for treating Chagas Disease and is listed in the WHO Model List of Essential Medicines for Children. Herein, a new child-friendly oral BNZ delivery platform is developed in the form of supramolecular eutectogels (EGs). EGs address BNZ's poor oral bioavailability and provide a flexible twice-daily dose in stick-pack format. This green and sustainable formulation strategy relies on the gelation of drug-loaded Natural Deep Eutectic Solvents (NaDES) with xanthan gum (XG) and water. Specifically, choline chloride-based NaDES form stable and biocompatible 5 mg/mL BNZ-loaded EGs. Rheological and Low-field NMR investigations indicate that EGs are viscoelastic materials comprised of two co-existing regions in the XG network generated by different crosslink distributions between the biopolymer, NaDES and water. Remarkably, the shear modulus and relaxation spectrum of EGs remain unaffected by temperature variations. Upon dilution with simulated gastrointestinal fluids, EGs results in BNZ supersaturation, serving as the primary driving force for its absorption. Interestingly, after oral administration of EGs to rats, drug bioavailability increases by 2.6-fold, with a similar increase detected in their cerebrospinal fluid. The noteworthy correlation between in vivo results and in vitro release profiles confirms the efficacy of EGs in enhancing both peripheral and central BNZ oral bioavailability.",
+    "tags": [
+      "supersaturating formulation"
+    ]
+  },
+  {
+    "id": "S47",
+    "title": "Supersaturation and Precipitation Applicated in Drug Delivery Systems: Development Strategies and Evaluation Approaches",
+    "source": "Molecules (Basel, Switzerland)",
+    "year": 2023,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/36903470/",
+    "doi": "10.3390/molecules28052212",
+    "pmid": "36903470",
+    "text": "Supersaturation is a promising strategy to improve gastrointestinal absorption of poorly water-soluble drugs. Supersaturation is a metastable state and therefore dissolved drugs often quickly precipitate again. Precipitation inhibitors can prolong the metastable state. Supersaturating drug delivery systems (SDDS) are commonly formulated with precipitation inhibitors, hence the supersaturation is effectively prolonged for absorption, leading to improved bioavailability. This review summarizes the theory of and systemic insight into supersaturation, with the emphasis on biopharmaceutical aspects. Supersaturation research has developed from the generation of supersaturation (pH-shift, prodrug and SDDS) and the inhibition of precipitation (the mechanism of precipitation, the character of precipitation inhibitors and screening precipitation inhibitors). Then, the evaluation approaches to SDDS are discussed, including in vitro, in vivo and in silico studies and in vitro-in vivo correlations. In vitro aspects involve biorelevant medium, biomimetic apparatus and characterization instruments; in vivo aspects involve oral absorption, intestinal perfusion and intestinal content aspiration and in silico aspects involve molecular dynamics simulation and pharmacokinetic simulation. More physiological data of in vitro studies should be taken into account to simulate the in vivo environment. The supersaturation theory should be further completed, especially with regard to physiological conditions.",
+    "tags": [
+      "supersaturating formulation",
+      "precipitation inhibition"
+    ]
+  },
+  {
+    "id": "S48",
+    "title": "Supersaturation-Based Drug Delivery Systems: Strategy for Bioavailability Enhancement of Poorly Water-Soluble Drugs",
+    "source": "Molecules (Basel, Switzerland)",
+    "year": 2022,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/35566319/",
+    "doi": "10.3390/molecules27092969",
+    "pmid": "35566319",
+    "text": "At present, the majority of APIs synthesized today remain challenging tasks for formulation development. Many technologies are being utilized or explored for enhancing solubility, such as chemical modification, novel drug delivery systems (microemulsions, nanoparticles, liposomes, etc.), salt formation, and many more. One promising avenue attaining attention presently is supersaturated drug delivery systems. When exposed to gastrointestinal fluids, drug concentration exceeds equilibrium solubility and a supersaturation state is maintained long enough to be absorbed, enhancing bioavailability. In this review, the latest developments in supersaturated drug delivery systems are addressed in depth.",
+    "tags": [
+      "supersaturating formulation"
+    ]
+  },
+  {
+    "id": "S49",
+    "title": "Current Status of Supersaturable Self-Emulsifying Drug Delivery Systems",
+    "source": "Pharmaceutics",
+    "year": 2020,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/32316199/",
+    "doi": "10.3390/pharmaceutics12040365",
+    "pmid": "32316199",
+    "text": "Self-emulsifying drug delivery systems (SEDDSs) are a vital strategy to enhance the bioavailability (BA) of formulations of poorly water-soluble compounds. However, these formulations have certain limitations, including in vivo drug precipitation, poor in vitro in vivo correlation due to a lack of predictive in vitro tests, issues in handling of liquid formulation, and physico-chemical instability of drug and/or vehicle components. To overcome these limitations, which restrict the potential usage of such systems, the supersaturable SEDDSs (su-SEDDSs) have gained attention based on the fact that the inclusion of precipitation inhibitors (PIs) within SEDDSs helps maintain drug supersaturation after dispersion and digestion in the gastrointestinal tract. This improves the BA of drugs and reduces the variability of exposure. In addition, the formulation of solid su-SEDDSs has helped to overcome disadvantages of liquid or capsule dosage form. This review article discusses, in detail, the current status of su-SEDDSs that overcome the limitations of conventional SEDDSs. It discusses the definition and range of su-SEDDSs, the principle mechanisms underlying precipitation inhibition and enhanced in vivo absorption, drug application cases, biorelevance in vitro digestion models, and the development of liquid su-SEDDSs to solid dosage forms. This review also describes the effects of various physiological factors and the potential interactions between PIs and lipid, lipase or lipid digested products on the in vivo performance of su-SEDDSs. In particular, several considerations relating to the properties of PIs are discussed from various perspectives.",
+    "tags": [
+      "supersaturating formulation"
+    ]
+  },
+  {
+    "id": "S50",
+    "title": "Supersaturable solid self-microemulsifying drug delivery system: precipitation inhibition and bioavailability enhancement",
+    "source": "International journal of nanomedicine",
+    "year": 2017,
+    "url": "https://pubmed.ncbi.nlm.nih.gov/29263669/",
+    "doi": "10.2147/IJN.S149717",
+    "pmid": "29263669",
+    "text": "Solid self-emulsifying drug delivery system (SSEDDS), which incorporates liquid SEDDS into a solid dosage form, has been recently introduced to improve the oral bioavail-ability of poorly water-soluble drugs. However, supersaturated drug generated by SSEDDS is thermodynamically unstable and tends to precipitate rapidly prior to absorption, resulting in compromised bioavailability. The aim of this study was to construct a novel supersaturated SSEDDS (super-SSEDDS) by combining SSEDDS with appropriate precipitation inhibitor. Fenofibrate (FNB), a sparingly soluble drug, was selected as a model drug in this study. An optimized SSEDDS was prepared by solvent evaporation by using mesoporous silica Santa Barbara Amorphous-15 as the inert carrier. Supersaturation assay was conducted to evaluate the precipitation inhibition capacity of different polymers, and the results showed that Soluplus® could retard the FNB precipitation more effectively and sustain a higher apparent concentration for ~120 min. This effect was also clearly observed in the dissolution profiles of FNB from SSEDDS under supersaturated condition. The study of the mechanism suggested that the inhibition effect might be achieved both thermodynamically and kinetically. The area under the concentration-time curve of the super-SSEDDS was 1.4-fold greater than that of SSEDDS in the absence of Soluplus, based on an in vivo pharmacokinetic study conducted in beagle dogs. This study has demonstrated that the approach of combining SSEDDS with Soluplus as a supersaturation stabilizer constitutes a potential tool to improve the absorption of poorly water-soluble drugs.",
+    "tags": [
+      "supersaturating formulation"
+    ]
+  }
+]

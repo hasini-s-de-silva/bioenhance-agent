@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+.pytest_cache/
+.DS_Store
+
+# Generated locally by `python -m scripts.train_solubility` (~43 MB).
+# Kept out of git: it is reproducible from data/esol.csv in about a minute,
+# and solubility_metrics.json records what it scored.
+data/solubility_model.joblib
+
+# Embedding cache, rebuilt on first run.
+data/evidence_embeddings.npy

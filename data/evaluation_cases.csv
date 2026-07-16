@@ -1,0 +1,13 @@
+name,smiles,bcs_class,expected_risk,reference_strategy,notes
+itraconazole,CCC(C)N1C(=O)N(C=N1)C2=CC=C(C=C2)N3CCN(CC3)C4=CC=C(C=C4)OCC5COC(O5)(CN6C=NC=N6)C7=C(C=C(C=C7)Cl)Cl,II,high,amorphous solid dispersion,Sporanox is formulated as an ASD coated on sugar spheres; very high logP.
+ritonavir,CC(C)C1=NC(=CS1)CN(C)C(=O)NC(C(C)C)C(=O)NC(CC2=CC=CC=C2)CC(C(CC3=CC=CC=C3)NC(=O)OCC4=CN=CS4)O,IV,high,amorphous solid dispersion,Norvir tablet uses melt-extruded ASD; the 1998 polymorph conversion is the classic solid-state cautionary tale.
+fenofibrate,CC(C)OC(=O)C(C)(C)OC1=CC=C(C=C1)C(=O)C2=CC=C(C=C2)Cl,II,high,particle size reduction,Tricor uses NanoCrystal technology; also a common lipid-formulation model compound.
+aprepitant,CC(C1=CC(=CC(=C1)C(F)(F)F)C(F)(F)F)OC2C(N(CCO2)CC3=NNC(=O)N3)C4=CC=C(C=C4)F,IV,high,nanosuspension,Emend capsules use nanocrystal particle-size reduction.
+griseofulvin,CC1CC(=O)C=C(C12C(=O)C3=C(O2)C(=C(C=C3OC)OC)Cl)OC,II,high,particle size reduction,Classic micronisation case; ultramicrosize formulations improve exposure.
+carbamazepine,C1=CC=C2C(=C1)C=CC3=CC=CC=C3N2C(=O)N,II,moderate,cocrystal,The most studied pharmaceutical cocrystal model compound.
+celecoxib,CC1=CC=C(C=C1)C2=CC(=NN2C3=CC=C(C=C3)S(=O)(=O)N)C(F)(F)F,II,high,amorphous solid dispersion,Widely studied for ASD and cyclodextrin approaches.
+cinnarizine,C1CN(CCN1CC=CC2=CC=CC=C2)C(C3=CC=CC=C3)C4=CC=CC=C4,II,high,supersaturating formulation,Weak base; standard model compound for SEDDS and precipitation studies.
+danazol,CC12CCC3C(C1CCC2(C#C)O)CCC4=CC5=C(CC34C)C=NO5,II,high,lipid-based formulation,Classic lipid-formulation and cyclodextrin model compound.
+ibuprofen,CC(C)CC1=CC=C(C=C1)C(C)C(=O)O,II,moderate,salt formation,Marketed as lysine and sodium salts for faster onset.
+metformin,CN(C)C(=N)N=C(N)N,III,low,none required,"Negative control. Highly soluble, permeability-limited."
+paracetamol,CC(=O)NC1=CC=C(C=C1)O,I,low,none required,Negative control. Freely soluble and permeable.

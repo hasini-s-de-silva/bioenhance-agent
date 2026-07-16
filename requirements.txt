@@ -1,0 +1,31 @@
+# Core scientific tooling
+rdkit>=2024.3.1
+scikit-learn>=1.4
+pandas>=2.0
+numpy>=1.26
+joblib>=1.3
+
+# Structured output
+pydantic>=2.6
+
+# Retrieval
+sentence-transformers>=2.6      # optional: TF-IDF fallback is used if unavailable
+faiss-cpu>=1.8                  # optional: exact numpy search is used if unavailable
+
+# LLM
+anthropic>=0.40
+python-dotenv>=1.0
+
+# Interface
+streamlit>=1.32
+plotly>=5.20
+
+# Testing
+pytest>=8.0
+
+# Notebook (notebooks/solubility_model.ipynb)
+matplotlib>=3.8
+jupyter>=1.0
+
+# Optional: only needed to regenerate assets/demo.png via scripts/capture_demo.py
+# playwright>=1.44   # then: playwright install chromium
