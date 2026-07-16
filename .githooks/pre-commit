@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+# Block secrets from ever entering a commit in this public repository.
+#
+# .gitignore already keeps .env out of git, but it only covers the file we
+# thought of. This hook checks what is actually being committed, so it also
+# catches a key pasted into a notebook, a source file, or a `git add -f .env`.
+#
+# Enable (once per clone):   git config core.hooksPath .githooks
+# Emergency bypass:          git commit --no-verify   (think hard first)
+
+set -uo pipefail
+fail=0
+
+# 1. Never commit a real .env, even with `git add -f`.
+if git diff --cached --name-only | grep -qx '.env'; then
+    echo "BLOCKED: .env is staged. It holds your API key and must never be committed."
+    echo "  Fix: git restore --staged .env"
+    fail=1
+fi
+
+# 2. Never commit a real-looking Anthropic key. Placeholders like 'sk-ant-...'
+#    contain an ellipsis and so cannot match this pattern.
+if git diff --cached -U0 | grep -nE '^\+.*sk-ant-[A-Za-z0-9_-]{30,}' >/dev/null; then
+    echo "BLOCKED: a real-looking Anthropic API key appears in staged changes."
+    git diff --cached -U0 --name-only | while read -r f; do
+        if git diff --cached -U0 -- "$f" | grep -qE '^\+.*sk-ant-[A-Za-z0-9_-]{30,}'; then
+            echo "  in: $f"
+        fi
+    done
+    echo "  Remove the key, keep it in .env (which is gitignored), and re-stage."
+    echo "  If it was already pushed, treat the key as burned: revoke it at"
+    echo "  console.anthropic.com and issue a new one."
+    fail=1
+fi
+
+# 3. Generic private-key material.
+if git diff --cached -U0 | grep -qE '^\+.*BEGIN [A-Z ]*PRIVATE KEY'; then
+    echo "BLOCKED: a private key block appears in staged changes."
+    fail=1
+fi
+
+exit $fail

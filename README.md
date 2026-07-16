@@ -300,7 +300,22 @@ python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 
 cp .env.example .env      # add ANTHROPIC_API_KEY (optional)
+git config core.hooksPath .githooks   # enable the secret guard (see below)
 ```
+
+### Keeping your API key out of this repository
+
+The key lives in `.env`, which is gitignored and never committed. `.env.example` is
+the template and contains only a placeholder.
+
+`.githooks/pre-commit` is a second line of defence, because `.gitignore` only protects
+the one file we thought of. The hook inspects what is actually staged and refuses the
+commit if it finds a real-looking key — including a `git add -f .env`, or a key pasted
+into a source file or notebook, which `.gitignore` cannot catch. Enable it once per
+clone with `git config core.hooksPath .githooks`.
+
+If a key is ever pushed, treat it as burned: revoke it at `console.anthropic.com` and
+issue a new one. Rewriting git history does not help — it is public the moment it lands.
 
 Build the data artefacts (the repo ships the evidence library and eval cases; the model is
 trained locally):
