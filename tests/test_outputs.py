@@ -10,7 +10,12 @@ from __future__ import annotations
 import pytest
 from pydantic import ValidationError
 
-from src.llm_agent import FormulationAgent, _extract_json, check_grounding
+from src.llm_agent import (
+    ConfigurationError,
+    FormulationAgent,
+    _extract_json,
+    check_grounding,
+)
 from src.schemas import (
     CompoundSummary,
     Confidence,
@@ -132,6 +137,51 @@ class TestSchemaValidation:
             supporting_sources=["[S03]", "Source 7", "s12"],
         )
         assert s.supporting_sources == ["S03", "S07", "S12"]
+
+
+class TestKeyValidation:
+    """A bad key must fail loudly at setup, never as a plausible-looking 0% result."""
+
+    def test_missing_key_raises(self, monkeypatch):
+        monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
+        with pytest.raises(ConfigurationError, match="not set"):
+            FormulationAgent(backend="anthropic")
+
+    def test_unedited_placeholder_is_rejected(self, monkeypatch):
+        """The .env.example placeholder is the most likely setup mistake."""
+        monkeypatch.setenv("ANTHROPIC_API_KEY", "sk-ant-...")
+        with pytest.raises(ConfigurationError, match="placeholder"):
+            FormulationAgent(backend="anthropic")
+
+    def test_truncated_key_is_rejected(self, monkeypatch):
+        monkeypatch.setenv("ANTHROPIC_API_KEY", "sk-ant-abc123")
+        with pytest.raises(ConfigurationError, match="placeholder"):
+            FormulationAgent(backend="anthropic")
+
+    def test_auto_falls_back_rather_than_using_a_bad_key(self, monkeypatch):
+        monkeypatch.setenv("ANTHROPIC_API_KEY", "sk-ant-...")
+        assert FormulationAgent(backend="auto").backend == "rulebased"
+
+    def test_plausible_key_is_accepted(self, monkeypatch):
+        monkeypatch.setenv("ANTHROPIC_API_KEY", "sk-ant-api03-" + "x" * 95)
+        assert FormulationAgent(backend="anthropic").backend == "anthropic"
+
+
+class TestSaveRefusesBrokenRuns:
+    def test_all_failed_run_is_not_written(self, tmp_path, monkeypatch):
+        """A run where nothing worked must not overwrite good results with zeros."""
+        from src import evaluation
+
+        monkeypatch.setattr(evaluation, "RESULTS_DIR", tmp_path)
+        report = {
+            "outcomes": [
+                {"schema_ok": False, "error": "401 invalid x-api-key"},
+                {"schema_ok": False, "error": "401 invalid x-api-key"},
+            ]
+        }
+        with pytest.raises(RuntimeError, match="refusing to overwrite"):
+            evaluation.save(report)
+        assert not (tmp_path / "evaluation.md").exists()
 
 
 class TestJsonExtraction:

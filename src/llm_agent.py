@@ -21,6 +21,7 @@ import os
 import re
 
 from dotenv import load_dotenv
+from pydantic import ValidationError
 
 # Load .env here rather than only in app.py, so every entry point — the Streamlit
 # app, the evaluation harness, a bare `python -c` — sees the key. Without this the
@@ -47,6 +48,16 @@ from .solubility_model import get_predictor
 
 DEFAULT_MODEL = os.environ.get("BIOENHANCE_MODEL", "claude-sonnet-5")
 MAX_TOKENS = 4000
+
+# A real key is a long opaque string. The .env.example placeholder is short and
+# contains an ellipsis; copying the example without editing it is the single most
+# likely setup mistake, and a 401 on every one of 72 calls is an expensive way to
+# discover it.
+MIN_KEY_LENGTH = 40
+
+
+class ConfigurationError(RuntimeError):
+    """Setup is wrong in a way no retry can fix — bad key, bad model, no access."""
 
 
 # --------------------------------------------------------------------------
@@ -292,27 +303,37 @@ class FormulationAgent:
         key = os.environ.get("ANTHROPIC_API_KEY", "").strip()
 
         if backend == "auto":
-            backend = "anthropic" if key else "rulebased"
-        elif backend == "anthropic" and not key:
-            # Explicitly asking for the LLM without a key is a mistake worth shouting
-            # about — falling back silently would produce rule-based numbers labelled
-            # as an LLM run.
-            raise RuntimeError(
-                "backend='anthropic' requires ANTHROPIC_API_KEY, which is not set.\n"
-                "  1. cp .env.example .env\n"
-                "  2. put your key in .env as ANTHROPIC_API_KEY=sk-ant-...\n"
-                "  3. re-run from the repository root\n"
-                "Or use --backend rulebased for the deterministic no-LLM baseline."
-            )
-
-        if backend == "anthropic" and key.startswith("sk-ant-") is False:
-            print(
-                f"[warning] ANTHROPIC_API_KEY does not start with 'sk-ant-' "
-                f"(got {key[:7]!r}...). If auth fails, check the key was copied in full."
-            )
+            backend = "anthropic" if self._key_looks_real(key) else "rulebased"
+        elif backend == "anthropic":
+            # Explicitly asking for the LLM with a missing or unedited key is a mistake
+            # worth shouting about up front. Falling through would burn one 401 per
+            # request and then report rule-based-looking zeros as an LLM result.
+            self._validate_key(key)
 
         self.backend = backend
         self._client = None
+
+    @staticmethod
+    def _key_looks_real(key: str) -> bool:
+        return bool(key) and "..." not in key and len(key) >= MIN_KEY_LENGTH
+
+    @classmethod
+    def _validate_key(cls, key: str) -> None:
+        if not key:
+            raise ConfigurationError(
+                "ANTHROPIC_API_KEY is not set.\n"
+                "  1. cp .env.example .env\n"
+                "  2. put your real key in .env  ->  ANTHROPIC_API_KEY=sk-ant-...\n"
+                "  3. re-run from the repository root\n"
+                "Or use --backend rulebased for the deterministic no-LLM baseline."
+            )
+        if "..." in key or len(key) < MIN_KEY_LENGTH:
+            raise ConfigurationError(
+                f"ANTHROPIC_API_KEY looks like the unedited .env.example placeholder "
+                f"(length {len(key)}; a real key is ~100 characters and has no '...').\n"
+                "Open .env, replace the whole placeholder with your real key, and SAVE "
+                "the file before re-running."
+            )
 
     @property
     def mode_label(self) -> str:
@@ -364,18 +385,39 @@ class FormulationAgent:
             **context,
         )
 
+        import anthropic
+
         last_error: Exception | None = None
         for attempt in range(3):
             try:
                 raw = self._call_llm(SYSTEM_PROMPT, user, temperature)
                 return FormulationAssessment.model_validate(_extract_json(raw))
-            except Exception as exc:  # noqa: BLE001 - retry on malformed JSON
+            except (
+                anthropic.AuthenticationError,
+                anthropic.PermissionDeniedError,
+                anthropic.NotFoundError,
+            ) as exc:
+                # Bad key, no access, or a model that doesn't exist. Retrying cannot
+                # help — it just turns one clear failure into three noisy ones and
+                # buries the cause under a misleading "failed validation" message.
+                raise ConfigurationError(
+                    f"{type(exc).__name__}: {exc}\n"
+                    "This is a configuration problem, not a model problem. Check "
+                    "ANTHROPIC_API_KEY in .env, that the key is active with credit at "
+                    "console.anthropic.com, and that BIOENHANCE_MODEL names a model "
+                    "your account can reach."
+                ) from exc
+            except (ValueError, ValidationError) as exc:
+                # Malformed or schema-invalid JSON — the one failure worth retrying,
+                # since the feedback often fixes it.
                 last_error = exc
                 user += (
                     f"\n\nYour previous response failed validation: {exc}. "
                     "Return ONLY the valid JSON object."
                 )
-        raise RuntimeError(f"Model failed to return schema-valid JSON after 3 attempts: {last_error}")
+        raise RuntimeError(
+            f"Model failed to return schema-valid JSON after 3 attempts: {last_error}"
+        )
 
     def run(
         self,

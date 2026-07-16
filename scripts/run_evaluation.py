@@ -9,8 +9,10 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import sys
 
 from src.evaluation import run_evaluation, save, to_markdown
+from src.llm_agent import ConfigurationError
 
 
 def main() -> None:
@@ -22,10 +24,14 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    report = run_evaluation(
-        backend=args.backend, configs=args.configs, stability_repeats=args.repeats
-    )
-    save(report)
+    try:
+        report = run_evaluation(
+            backend=args.backend, configs=args.configs, stability_repeats=args.repeats
+        )
+        save(report)
+    except ConfigurationError as exc:
+        # A setup problem, not a result. Report it plainly and leave results/ untouched.
+        sys.exit(f"\nSetup problem — no evaluation was run:\n\n{exc}\n")
 
     print("\n" + "=" * 78)
     print(to_markdown(report))

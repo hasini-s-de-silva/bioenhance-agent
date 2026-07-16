@@ -28,7 +28,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from statistics import mean
 
-from .llm_agent import FormulationAgent
+from .llm_agent import ConfigurationError, FormulationAgent
 from .retrieval import get_index
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -85,6 +85,10 @@ def _retrieval_hit(retrieved, reference_strategy: str) -> bool:
 def evaluate_case(agent: FormulationAgent, case: dict, config: str) -> CaseOutcome:
     try:
         result = agent.run(smiles=case["smiles"], name=case["name"], prompt_mode=config)
+    except ConfigurationError:
+        # Never swallow a setup error into a per-case result. Doing so turns "your key
+        # is wrong" into a plausible-looking table of 0% scores attributed to the model.
+        raise
     except Exception as exc:  # noqa: BLE001 - a failed run is a real result
         return CaseOutcome(
             name=case["name"],
@@ -301,6 +305,22 @@ def to_markdown(report: dict) -> str:
 
 
 def save(report: dict) -> None:
+    """Write results, refusing to publish a run in which nothing actually worked.
+
+    A run where every case errored produces a table of 0% scores that reads as a
+    finding about the model. It is not — it is a broken run, and overwriting good
+    results with it destroys real data.
+    """
+    succeeded = sum(1 for o in report["outcomes"] if o["schema_ok"])
+    if succeeded == 0:
+        first_error = next(
+            (o["error"] for o in report["outcomes"] if o.get("error")), "unknown error"
+        )
+        raise RuntimeError(
+            f"Every one of {len(report['outcomes'])} runs failed — refusing to overwrite "
+            f"results/ with a table of zeros.\nFirst error: {first_error}"
+        )
+
     RESULTS_DIR.mkdir(exist_ok=True)
     (RESULTS_DIR / "evaluation.json").write_text(json.dumps(report, indent=2))
     (RESULTS_DIR / "evaluation.md").write_text(to_markdown(report))
