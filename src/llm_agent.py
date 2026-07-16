@@ -51,7 +51,7 @@ from .schemas import (
 )
 from .solubility_model import get_predictor
 
-DEFAULT_MODEL = os.environ.get("BIOENHANCE_MODEL", "claude-sonnet-5")
+DEFAULT_MODEL = os.environ.get("BIOENHANCE_MODEL", "")
 MAX_TOKENS = 4000
 
 # Local-model backend. Free, offline, no API key, no billing — the spec allows
@@ -129,7 +129,7 @@ def _explain_api_error(exc: Exception) -> str:
         hint = "The key is valid but lacks permission for this model or endpoint."
     elif status == 404 or "not_found" in low:
         hint = (
-            f"The model was not found. BIOENHANCE_MODEL={DEFAULT_MODEL!r}.\n"
+            f"The model was not found. BIOENHANCE_MODEL={os.environ.get('BIOENHANCE_MODEL', '')!r}.\n"
             "  Check that name is correct and available to your account."
         )
     elif status == 429 or "rate_limit" in low:
@@ -373,6 +373,15 @@ class FormulationAgent:
             # worth shouting about up front. Falling through would burn one 401 per
             # request and then report rule-based-looking zeros as an LLM result.
             self._validate_key(key)
+
+        if backend == "anthropic" and not model:
+            raise ConfigurationError(
+                "BIOENHANCE_MODEL is not set. The anthropic backend has no built-in "
+                "default model, so pick one explicitly:\n"
+                "  1. Check docs.anthropic.com for current model ids\n"
+                "  2. Set BIOENHANCE_MODEL in .env to that id\n"
+                "Or use --backend ollama for the free local model."
+            )
 
         self.backend = backend
         self._client = None
