@@ -5,7 +5,7 @@ whenever it stops being useful.
 
 **Repo:** https://github.com/hasini-s-de-silva/bioenhance-agent (public)
 **Local:** `~/Desktop/GITHUB/bioenhance-agent`
-**Last updated:** 2026-07-16
+**Last updated:** 2026-07-16 (evening)
 
 ---
 
@@ -18,48 +18,48 @@ The project is **complete, tested, and pushed**. Everything below is verified, n
 | RDKit descriptor tool | Done. Verified against known values (aspirin, caffeine, ibuprofen). |
 | ESOL solubility model | Done. Trained on real Delaney data (n=1128). Test RMSE **0.758**, R² **0.878**. |
 | Evidence library | Done. **50 real PubMed open-access records**, every PMID verified to resolve. |
-| Retrieval | Done. sentence-transformers + FAISS, with a TF-IDF fallback. |
+| Retrieval | Done. sentence-transformers + FAISS, with a TF-IDF fallback. Now thread-safe (see below). |
 | Structured LLM output | Done. Pydantic-validated, with retry on schema failure. |
 | Grounding guardrail | Done. `check_grounding()` catches fabricated citations. Tested against a deliberately fabricating model. |
 | Streamlit app | Done. Verified in a real browser; `assets/demo.png` is a real screenshot. |
 | Tests | **66 pass** offline (68 with `--run-network`). |
 | Evaluation harness | Done, with 3 ablations + 12 cases incl. 2 negative controls. |
-| **LLM evaluation numbers** | **The one open item — see below.** |
+| **LLM evaluation numbers** | **Done.** Real qwen2.5:7b results are in `results/evaluation.md` and the README. |
 
-## The one open item
+## The evaluation is finished — real results are in
 
-`results/evaluation.md` currently holds **rule-based** results (honest, but not an LLM run).
-A local-LLM run was in progress when the session ended.
+`results/evaluation.md` and the README's Evaluation section now hold real qwen2.5:7b
+results (local, free, no API key), not the old rule-based placeholder.
 
-To finish it — free, no API key, no account:
+Headline findings, measured:
+
+- **`llm_only` calls every one of the 12 compounds "high solubility risk,"** including
+  paracetamol and metformin — the two negative controls, which are freely soluble. It scores
+  67% risk agreement only because 8 of 12 test compounds genuinely are high-risk. That is
+  accuracy with no calibration — the measured version of the README's "Why LLM-only systems
+  are insufficient" argument.
+- **`llm_rag` (retrieval, no descriptors) made risk agreement *worse*** (33%, down from 67%)
+  and produced the run's only fabricated citation, on metformin. Evidence without grounding
+  descriptors gave the model something to talk around, not reason from.
+- **`full` (descriptors + retrieval + LLM) is the only configuration that correctly calls
+  paracetamol "low."** Risk agreement 75%, zero fabricated citations. This is the clean,
+  quantified demonstration that the scientific tooling — not the LLM — is what makes the
+  system trustworthy.
+
+Caveat to keep: qwen2.5:7b is a small local model, so this shows what *this* model does
+ungrounded. Do not overclaim it as a universal law about LLMs.
+
+Reproduce with:
 
 ```bash
 cd ~/Desktop/GITHUB/bioenhance-agent
 source .venv/bin/activate
 ollama pull qwen2.5:7b                                    # if not already pulled
-python -m scripts.run_evaluation --backend ollama --repeats 2
-git add results/ && git commit -m "Add local-LLM evaluation results" && git push
+python -m scripts.run_evaluation --backend ollama --repeats 2 --workers 3
 ```
 
-Takes ~30-40 min on an M4. `./finish.sh` does the wait-then-push automatically.
-
-### The finding that was emerging (worth confirming)
-
-In the `llm_only` ablation — no descriptors, no evidence — qwen2.5:7b called **all 12
-compounds "high solubility risk"**, including paracetamol and metformin, which are freely
-soluble and were included precisely as negative controls.
-
-It scores ~67% risk agreement, but only because 8 of the 12 test compounds genuinely are
-high-risk. **A model that always answers "high" scores 67% on this set by accident.** That
-is accuracy with no calibration, and it is the measured version of the README's
-"Why LLM-only systems are insufficient" argument.
-
-The open question the `full` ablation answers: do descriptors + the ESOL model fix it? If
-`full` correctly calls paracetamol *low*, that is a clean quantified demonstration that the
-scientific tooling — not the LLM — is what makes the system trustworthy.
-
-Caveat to keep: qwen2.5:7b is a small local model, so this shows what *this* model does
-ungrounded. Do not overclaim it as a universal law about LLMs.
+`finish.sh` was removed — it was a one-off wrapper for the hand-off step above, not part of
+the project.
 
 ---
 
@@ -98,6 +98,19 @@ ungrounded. Do not overclaim it as a universal law about LLMs.
 4. The rule-based backend over-triggered, recommending cocrystals for paracetamol.
 5. Small local models ignore an *implied* citation requirement — qwen2.5:7b cited nothing
    until the prompt demanded citations explicitly (measured: 0 → S01+S30).
+6. `get_index()` was a lazy singleton with no lock — the evaluation harness calls it from a
+   6-worker thread pool, so concurrent callers raced to construct their own
+   `SentenceTransformer` instance. Reproducibly segfaulted the process. Fixed with a
+   double-checked lock, plus building the index once on the main thread before the pool
+   starts.
+7. `EvidenceIndex._embed_query()` called the shared model's `.encode()` from multiple
+   threads with no synchronisation — also reproducibly segfaulted (this one crashed even
+   after fix #6, since the model was already built; the encode *call itself* isn't
+   thread-safe here). Fixed with a lock around query embedding.
+8. With #6 and #7 fixed, 6 concurrent client requests against Ollama (which serialises
+   without `OLLAMA_NUM_PARALLEL` set server-side — see Gotchas) queued long enough to exceed
+   the 300s per-request timeout. Fixed by raising `BIOENHANCE_OLLAMA_TIMEOUT` to 900 and
+   defaulting `--workers` to a lower count for local-model runs.
 
 ## Gotchas
 
@@ -118,8 +131,7 @@ Keep it narrow and scientifically honest.
 
 ## Next steps, in value order
 
-1. Finish the local-LLM evaluation and paste the real table into the README.
-2. Add pKa prediction — the single largest source of error, and why metformin fails.
-3. Melting point / glass-transition prediction to make ASD recommendations defensible.
-4. Expand the library beyond 50 documents; add a cross-encoder reranker.
-5. Replace tag-overlap retrieval relevance with expert-annotated judgements.
+1. Add pKa prediction — the single largest source of error, and why metformin fails.
+2. Melting point / glass-transition prediction to make ASD recommendations defensible.
+3. Expand the library beyond 50 documents; add a cross-encoder reranker.
+4. Replace tag-overlap retrieval relevance with expert-annotated judgements.
