@@ -201,7 +201,7 @@ def run_evaluation(
 
     outcomes: list[CaseOutcome] = []
     for config in configs:
-        print(f"\n[{config}]")
+        print(f"\n[{config}]", flush=True)
         for case in cases:
             outcome = evaluate_case(agent, case, config)
             outcomes.append(outcome)
@@ -212,15 +212,16 @@ def run_evaluation(
             print(
                 f"  {flag} {case['name']:15s} cite={cite} "
                 f"halluc={outcome.n_hallucinated} risk={outcome.predicted_risk}"
-                f"{'' if outcome.risk_agreement else ' (exp ' + outcome.expected_risk + ')'}"
+                f"{'' if outcome.risk_agreement else ' (exp ' + outcome.expected_risk + ')'}",
+                flush=True,
             )
 
     summaries = [summarise(outcomes, c) for c in configs]
 
-    print("\n[stability]")
+    print("\n[stability]", flush=True)
     stability = [stability_check(agent, c, stability_repeats) for c in cases]
     for s in stability:
-        print(f"  {s['name']:15s} agreement={s['agreement']:.2f}  top={s['modal']}")
+        print(f"  {s['name']:15s} agreement={s['agreement']:.2f}  top={s['modal']}", flush=True)
 
     return {
         "backend": agent.mode_label,

@@ -1,13 +1,16 @@
 """The formulation agent: tools -> retrieval -> LLM -> validated, grounded output.
 
-Two backends:
+Three backends:
 
-  anthropic  - a real LLM call (requires ANTHROPIC_API_KEY).
+  anthropic  - a hosted LLM call (requires ANTHROPIC_API_KEY and account credit).
+  ollama     - a local LLM, free and offline. No key, no billing, no account. This is
+               the backend the published evaluation uses, so anyone can reproduce the
+               results on their own machine at zero cost.
   rulebased  - a deterministic, non-LLM baseline used for tests, CI and offline demos.
 
 The rule-based backend is NOT an LLM and never pretends to be. It exists so the
-repository runs end-to-end without an API key, and so the test suite is deterministic.
-Its outputs are labelled as such everywhere they surface.
+repository runs end-to-end without any model at all, and so the test suite is
+deterministic. Its outputs are labelled as such everywhere they surface.
 
 Every run — whichever backend — is passed through `check_grounding`, which verifies
 that the model cited only source ids that were genuinely retrieved. That check is what
@@ -19,6 +22,8 @@ from __future__ import annotations
 import json
 import os
 import re
+import urllib.error
+import urllib.request
 
 from dotenv import load_dotenv
 from pydantic import ValidationError
@@ -48,6 +53,13 @@ from .solubility_model import get_predictor
 
 DEFAULT_MODEL = os.environ.get("BIOENHANCE_MODEL", "claude-sonnet-5")
 MAX_TOKENS = 4000
+
+# Local-model backend. Free, offline, no API key, no billing — the spec allows
+# "any accessible LLM API or local model", and a reader who wants to reproduce the
+# LLM results without an account can do so here.
+OLLAMA_HOST = os.environ.get("OLLAMA_HOST", "http://localhost:11434")
+OLLAMA_MODEL = os.environ.get("BIOENHANCE_OLLAMA_MODEL", "qwen2.5:3b")
+OLLAMA_TIMEOUT = int(os.environ.get("BIOENHANCE_OLLAMA_TIMEOUT", "300"))
 
 # A real key is a long opaque string. The .env.example placeholder is short and
 # contains an ellipsis; copying the example without editing it is the single most
@@ -351,6 +363,7 @@ def _rule_based_assessment(
 class FormulationAgent:
     def __init__(self, backend: str = "auto", model: str = DEFAULT_MODEL):
         self.model = model
+        self.ollama_model = OLLAMA_MODEL
         key = os.environ.get("ANTHROPIC_API_KEY", "").strip()
 
         if backend == "auto":
@@ -390,6 +403,8 @@ class FormulationAgent:
     def mode_label(self) -> str:
         if self.backend == "anthropic":
             return f"LLM ({self.model})"
+        if self.backend == "ollama":
+            return f"local LLM ({self.ollama_model} via Ollama)"
         return "rule-based baseline (no LLM)"
 
     def _anthropic(self):
@@ -399,7 +414,49 @@ class FormulationAgent:
             self._client = anthropic.Anthropic()
         return self._client
 
+    def _call_ollama(self, system: str, user: str, temperature: float) -> str:
+        """Call a locally-hosted model through Ollama's chat endpoint.
+
+        `format` is given the Pydantic JSON schema, so the runtime constrains decoding
+        to schema-valid output. Small local models are poor at freeform "return only
+        JSON" instructions; constrained decoding is what makes them usable here.
+        """
+        payload = {
+            "model": self.ollama_model,
+            "messages": [
+                {"role": "system", "content": system},
+                {"role": "user", "content": user},
+            ],
+            "stream": False,
+            "format": FormulationAssessment.model_json_schema(),
+            "options": {"temperature": temperature, "num_ctx": 8192},
+        }
+        request = urllib.request.Request(
+            f"{OLLAMA_HOST}/api/chat",
+            data=json.dumps(payload).encode(),
+            headers={"Content-Type": "application/json"},
+        )
+        try:
+            with urllib.request.urlopen(request, timeout=OLLAMA_TIMEOUT) as resp:
+                data = json.loads(resp.read())
+        except urllib.error.HTTPError as exc:
+            detail = exc.read().decode("utf-8", "replace")[:300]
+            raise ConfigurationError(
+                f"Ollama returned HTTP {exc.code}: {detail}\n"
+                f"  Is the model pulled?  ollama pull {self.ollama_model}"
+            ) from exc
+        except urllib.error.URLError as exc:
+            raise ConfigurationError(
+                f"Cannot reach Ollama at {OLLAMA_HOST} ({exc.reason}).\n"
+                "  Start it with:  ollama serve\n"
+                "  Install it with: brew install ollama"
+            ) from exc
+        return data["message"]["content"]
+
     def _call_llm(self, system: str, user: str, temperature: float) -> str:
+        if self.backend == "ollama":
+            return self._call_ollama(system, user, temperature)
+
         resp = self._anthropic().messages.create(
             model=self.model,
             max_tokens=MAX_TOKENS,

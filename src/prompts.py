@@ -148,6 +148,13 @@ def build_user_prompt(
         sections.append(
             "RETRIEVED SCIENTIFIC EVIDENCE — you may cite ONLY these source ids:\n\n"
             + format_evidence(evidence or [])
+            + "\n\nCITATION REQUIREMENT: for each strategy you rank, put the ids of the "
+            "documents above that support it into its `supporting_sources` field, copied "
+            "exactly as shown (e.g. \"S01\"). Most strategies you rank should carry at "
+            "least one id. If the retrieved evidence genuinely does not support a "
+            "strategy you still consider worth raising, keep it, leave supporting_sources "
+            "empty, and say in its limitations that no retrieved document supports it. "
+            "Never invent an id that does not appear above."
         )
     else:
         sections.append(

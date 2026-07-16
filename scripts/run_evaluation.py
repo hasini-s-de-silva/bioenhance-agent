@@ -17,7 +17,7 @@ from src.llm_agent import ConfigurationError
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--backend", default="auto", choices=["auto", "anthropic", "rulebased"])
+    parser.add_argument("--backend", default="auto", choices=["auto", "anthropic", "ollama", "rulebased"])
     parser.add_argument("--repeats", type=int, default=3)
     parser.add_argument(
         "--configs", nargs="*", default=None, help="subset of: llm_only llm_rag full"

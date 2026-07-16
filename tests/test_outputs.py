@@ -168,6 +168,32 @@ class TestKeyValidation:
         assert FormulationAgent(backend="anthropic").backend == "anthropic"
 
 
+class TestOllamaBackend:
+    """The free local backend is what makes the published evaluation reproducible."""
+
+    def test_needs_no_api_key(self, monkeypatch):
+        monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
+        agent = FormulationAgent(backend="ollama")
+        assert agent.backend == "ollama"
+
+    def test_mode_label_names_the_local_model_and_does_not_claim_anthropic(self, monkeypatch):
+        monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
+        label = FormulationAgent(backend="ollama").mode_label
+        assert "local" in label and "Ollama" in label
+        assert "claude" not in label.lower()
+
+    def test_unreachable_server_explains_how_to_start_it(self, monkeypatch):
+        """A dead Ollama must say 'ollama serve', not raise a bare URLError."""
+        from src import llm_agent
+
+        # Patch the module global rather than reloading — a reload would rebind the
+        # module's classes and break identity for tests that imported them already.
+        monkeypatch.setattr(llm_agent, "OLLAMA_HOST", "http://localhost:1")
+        agent = llm_agent.FormulationAgent(backend="ollama")
+        with pytest.raises(llm_agent.ConfigurationError, match="ollama serve"):
+            agent.run(smiles=PARACETAMOL, prompt_mode="full")
+
+
 class TestApiErrorExplanations:
     """An API error must name the actual next action, not dump a raw dict."""
 

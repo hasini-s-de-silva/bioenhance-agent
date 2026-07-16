@@ -198,14 +198,24 @@ Two design choices do the real work:
 
 ### Backends
 
-| Backend | What it is |
-|---|---|
-| `anthropic` | A real LLM call. Requires `ANTHROPIC_API_KEY`. |
-| `rulebased` | A deterministic, transparent heuristic. **Not an LLM**, and labelled as such everywhere it surfaces. |
+| Backend | What it is | Cost |
+|---|---|---|
+| `ollama` | A local model (`qwen2.5:7b`) run through [Ollama](https://ollama.com). No API key, no account, no network. **This is what the published evaluation below uses.** | Free |
+| `anthropic` | A hosted LLM. Needs `ANTHROPIC_API_KEY` *and* purchased account credit — a key alone returns HTTP 400. | ~$1–2 per evaluation run |
+| `rulebased` | A deterministic, transparent heuristic. **Not an LLM**, and labelled as such everywhere it surfaces. | Free |
 
-The rule-based backend exists so the repository runs end-to-end with no API key and so the
-test suite is deterministic. It is a baseline and a harness self-test, never a stand-in for
-LLM results.
+The local backend is deliberately the default for the published results: an evaluation
+nobody can re-run is a claim, not a result. Anyone with the repository can reproduce the
+table below on their own machine for nothing.
+
+Ollama's structured-output mode is given the Pydantic schema directly, so decoding is
+constrained to schema-valid JSON. That is what makes a 7B model usable here — asked to
+"return only JSON" in prose, small models routinely fail; constrained decoding removes the
+question.
+
+The rule-based backend exists so the repository runs end-to-end with no model at all and so
+the test suite is deterministic. It is a baseline and a harness self-test, never a stand-in
+for LLM results.
 
 ## Evaluation
 
@@ -299,9 +309,20 @@ git clone <repo-url> && cd bioenhance-agent
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 
-cp .env.example .env      # add ANTHROPIC_API_KEY (optional)
+cp .env.example .env
 git config core.hooksPath .githooks   # enable the secret guard (see below)
 ```
+
+**For the LLM backend — free, no account:**
+
+```bash
+brew install ollama          # or: https://ollama.com/download
+ollama pull qwen2.5:7b       # ~4.7 GB, one-time
+```
+
+That is the whole setup. No API key, no billing, no sign-up. A hosted model
+(`--backend anthropic`) is supported but optional, and needs both a key and purchased
+credit.
 
 ### Keeping your API key out of this repository
 
@@ -335,14 +356,17 @@ streamlit run app.py
 Test and evaluate:
 
 ```bash
-pytest                                  # 53 tests, no network or API key needed
-pytest --run-network                    # 55 tests, also exercises PubChem/PubMed
-python -m scripts.run_evaluation --backend rulebased
-python -m scripts.run_evaluation --backend anthropic   # needs an API key
+pytest                                  # 66 tests, no network, no model, no key
+pytest --run-network                    # 68 tests, also exercises PubChem/PubMed
+
+python -m scripts.run_evaluation --backend ollama      # free; reproduces the table below
+python -m scripts.run_evaluation --backend rulebased   # free; no LLM at all
+python -m scripts.run_evaluation --backend anthropic   # needs a key AND account credit
 ```
 
-Without an `ANTHROPIC_API_KEY` the app falls back to the rule-based backend and says so in
-the interface.
+The Ollama run takes roughly 90 minutes on an M4 and costs nothing. With no backend
+configured at all, the app falls back to the rule-based baseline and says so in the
+interface rather than pretending to be an LLM.
 
 ## Demonstration
 
